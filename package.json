@@ -1,0 +1,1 @@
+{\n  "name": "didactic-octo-chrome",\n  "version": "1.0.0",\n  "description": "A bot to monitor and take screenshots.",\n  "main": "index.js",\n  "scripts": {\n    "start": "node index.js",\n    "screenshot": "node screenshot.js"\n  },\n  "dependencies": {\n    "puppeteer": ">=10.0.0"\n  }\n}
