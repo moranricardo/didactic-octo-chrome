@@ -2,27 +2,27 @@ name: Screenshot Automation
 
 on:
   schedule:
+    # Runs at 09:00 UTC every day
     - cron: '0 9 * * *'
+  # Allows manual trigger from the Actions tab
+  workflow_dispatch:
 
 jobs:
   screenshot:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Run Screenshot Monitor
         run: |
+          chmod +x ./path/to/screenshot-monitor-script.sh
           ./path/to/screenshot-monitor-script.sh
 
       - name: Save Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: screenshots
-          path: ./path/to/screenshots/*
-
-      - name: Error Handling
-        if: failure()
-        run: |
-          echo 'An error occurred while running the screenshot monitor script.'
-          exit 1
+          # Replace the path below with the actual folder where your screenshots are saved
+          path: ./path/to/your/screenshots/
+          retention-days: 5
