@@ -2,11 +2,11 @@ name: Screenshot Automation
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs automatically every day at midnight (UTC)
-  workflow_dispatch:     # Allows you to run it manually from the "Actions" tab
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
-  contents: write       # Grants permissions for the bot to upload the image
+  contents: write
 
 jobs:
   screenshot:
@@ -18,7 +18,7 @@ jobs:
       - name: Take screenshot
         uses: flamedash/screenshot-action@v1.1.0
         with:
-          url: https://www.google.com # <--- CHANGE THIS to your desired website
+          url: https://www.google.com
           output: daily-screenshot.png
 
       - name: Save screenshot to repo
@@ -26,5 +26,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add daily-screenshot.png
-          git commit -m "Automatic screenshot upload" || echo "No changes to commit"
+          git commit -m "Automatic screenshot upload" || echo "No changes"
           git push
