@@ -2,14 +2,15 @@ name: Screenshot Automation
 
 on:
   schedule:
-    - cron: '0 9 * * *' # Se corre a las 09:00 UTC
-  workflow_dispatch: # Permite darle a "Run" manualmente
+    - cron: '0 0 * * *' # Runs automatically every day at midnight (UTC)
+  workflow_dispatch:     # Allows you to run it manually from the "Actions" tab
+
+permissions:
+  contents: write       # Grants permissions for the bot to upload the image
 
 jobs:
   screenshot:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Importante para que la acción pueda guardar la foto
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,13 +18,13 @@ jobs:
       - name: Take screenshot
         uses: flamedash/screenshot-action@v1.1.0
         with:
-          url: https://www.google.com # <--- CAMBIA ESTO por la web que quieras
-          output: captura-diaria.png
+          url: https://www.google.com # <--- CHANGE THIS to your desired website
+          output: daily-screenshot.png
 
       - name: Save screenshot to repo
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add captura-diaria.png
-          git commit -m "Carga de captura automática" || echo "No hay cambios"
+          git add daily-screenshot.png
+          git commit -m "Automatic screenshot upload" || echo "No changes to commit"
           git push
