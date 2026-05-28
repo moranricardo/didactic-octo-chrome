@@ -21,3 +21,9 @@ async function checkBridge() {
 }
 
 checkBridge();
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Validar arquitectura del puente
+        run: node test-bridge.js
+        continue-on-error: false
