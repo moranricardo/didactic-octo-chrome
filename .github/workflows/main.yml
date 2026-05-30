@@ -11,10 +11,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: 22 }
-      
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgbm1 libnss3 libatk-bridge2.0-0 libgtk-3-0 libxss1
+
       - name: Install Dependencies
         run: npm install
 
@@ -29,7 +38,13 @@ jobs:
 
       - name: Persistent Commit
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add diamond_core.json screenshots/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Evolución 818: Sincronización completa [skip ci]" && git push)
+          # Solo hace commit si hay cambios reales
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git commit -m "Evolución 818: Sincronización completa [skip ci]"
+            git push origin main
+          else
+            echo "Sin cambios, el Vórtice está estable."
+          fi
