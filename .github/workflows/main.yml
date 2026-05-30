@@ -31,7 +31,6 @@ jobs:
         run: |
           node index.js
           node screenshot-monitor.js
-
       - name: Persistent Commit
         run: |
           git config user.name "github-actions[bot]"
