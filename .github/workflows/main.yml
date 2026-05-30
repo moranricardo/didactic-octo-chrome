@@ -15,11 +15,6 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       
-      - name: Install System Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgbm1 libnss3 libatk-bridge2.0-0 libgtk-3-0 libxss1
-      
       - name: Install Dependencies
         run: npm install
 
