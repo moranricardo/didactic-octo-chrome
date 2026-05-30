@@ -16,8 +16,7 @@ jobs:
 
       - name: Auto-detectar Directorio de Trabajo
         run: |
-          # Busca la carpeta que contiene el package.json
-          TARGET_DIR=$(find . -name "package.json" -exec dirname {} \;)
+          TARGET_DIR=$(find . -name "package.json" -exec dirname {} \; | head -n 1)
           echo "Núcleo localizado en: $TARGET_DIR"
           echo "WORKDIR=$TARGET_DIR" >> $GITHUB_ENV
 
@@ -26,13 +25,20 @@ jobs:
         with:
           node-version: 22
 
-      - name: Instalar Dependencias
-        run: npm ci
+      - name: Instalar Dependencias (Forzada)
+        run: |
+          npm cache clean --force
+          npm ci
+        working-directory: ${{ env.WORKDIR }}
+
+      - name: Instalar Navegador
+        run: npx puppeteer browsers install chrome
         working-directory: ${{ env.WORKDIR }}
 
       - name: Validación del Puente
         run: node test-bridge.js
         working-directory: ${{ env.WORKDIR }}
+        continue-on-error: false
 
       - name: Ejecución del Ciclo del Vórtice
         run: |
@@ -46,9 +52,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add diamond_core.json screenshots/
           if ! git diff --cached --quiet; then
-            git commit -m "Evolución 818: Sincronización automática"
+            git commit -m "Evolución 818: Sincronización exitosa [skip ci]"
             git push origin main
-          else
-            echo "Sin cambios para persistir."
           fi
         working-directory: ${{ env.WORKDIR }}
