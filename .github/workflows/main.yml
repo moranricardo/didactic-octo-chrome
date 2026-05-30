@@ -14,12 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Ubicar y Preparar el Núcleo
+      - name: Auto-detectar Directorio de Trabajo
         run: |
-          # Busca dónde está el package.json
-          DIR=$(find . -name "package.json" -exec dirname {} \;)
-          echo "Núcleo encontrado en: $DIR"
-          echo "WORKDIR=$DIR" >> $GITHUB_ENV
+          # Busca la carpeta que contiene el package.json
+          TARGET_DIR=$(find . -name "package.json" -exec dirname {} \;)
+          echo "Núcleo localizado en: $TARGET_DIR"
+          echo "WORKDIR=$TARGET_DIR" >> $GITHUB_ENV
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -46,7 +46,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add diamond_core.json screenshots/
           if ! git diff --cached --quiet; then
-            git commit -m "Evolución 818: Sincronización completa [skip ci]"
+            git commit -m "Evolución 818: Sincronización automática"
             git push origin main
           else
             echo "Sin cambios para persistir."
