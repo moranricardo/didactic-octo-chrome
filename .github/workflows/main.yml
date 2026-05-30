@@ -1,0 +1,38 @@
+name: El Toroide Adiamantado (Evolución 818)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      
+      - name: Install System Dependencies
+        run: sudo apt-get update && sudo apt-get install -y libgbm1 libnss3 libatk-bridge2.0-0 libgtk-3-0
+      
+      - name: Install Deps & Browser
+        run: |
+          npm install
+          npx puppeteer browsers install chrome
+
+      - name: Pre-flight Bridge Check
+        run: node test-bridge.js
+        continue-on-error: false
+
+      - name: Execute Vortex Cycle
+        run: node index.js || echo "Ciclo fallido, protegiendo núcleo..."
+
+      - name: Persistent Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add diamond_core.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Evolución 818: Persistencia" && git push)
