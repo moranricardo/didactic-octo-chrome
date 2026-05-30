@@ -19,32 +19,36 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install System Dependencies
+      # Paso crítico: Diagnóstico y limpieza
+      - name: Preparación del Núcleo
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libgbm1 libnss3 libatk-bridge2.0-0 libgtk-3-0 libxss1
+          ls -F
+          # Asegura que las carpetas necesarias existan
+          mkdir -p screenshots
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Instalar Dependencias
+        run: npm ci
 
-      - name: Pre-flight Bridge Check
+      - name: Instalar Navegador
+        run: npx puppeteer browsers install chrome
+
+      - name: Validación del Puente
         run: node test-bridge.js
         continue-on-error: false
 
-      - name: Run Vortex Cycle & Monitoring
+      - name: Ejecución del Ciclo del Vórtice
         run: |
           node index.js
           node screenshot-monitor.js
 
-      - name: Persistent Commit
+      - name: Persistencia del Núcleo
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add diamond_core.json screenshots/
-          # Solo hace commit si hay cambios reales
-          if ! git diff --quiet || ! git diff --staged --quiet; then
+          if ! git diff --cached --quiet; then
             git commit -m "Evolución 818: Sincronización completa [skip ci]"
             git push origin main
           else
-            echo "Sin cambios, el Vórtice está estable."
+            echo "Sin cambios para persistir."
           fi
