@@ -14,32 +14,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Ubicar y Preparar el Núcleo
+        run: |
+          # Busca dónde está el package.json
+          DIR=$(find . -name "package.json" -exec dirname {} \;)
+          echo "Núcleo encontrado en: $DIR"
+          echo "WORKDIR=$DIR" >> $GITHUB_ENV
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      # Paso crítico: Diagnóstico y limpieza
-      - name: Preparación del Núcleo
-        run: |
-          ls -F
-          # Asegura que las carpetas necesarias existan
-          mkdir -p screenshots
-
       - name: Instalar Dependencias
         run: npm ci
-
-      - name: Instalar Navegador
-        run: npx puppeteer browsers install chrome
+        working-directory: ${{ env.WORKDIR }}
 
       - name: Validación del Puente
         run: node test-bridge.js
-        continue-on-error: false
+        working-directory: ${{ env.WORKDIR }}
 
       - name: Ejecución del Ciclo del Vórtice
         run: |
           node index.js
           node screenshot-monitor.js
+        working-directory: ${{ env.WORKDIR }}
 
       - name: Persistencia del Núcleo
         run: |
@@ -52,3 +51,4 @@ jobs:
           else
             echo "Sin cambios para persistir."
           fi
+        working-directory: ${{ env.WORKDIR }}
