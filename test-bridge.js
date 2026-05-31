@@ -1,10 +1,11 @@
-puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 
 async function checkBridge() {
   console.log("Iniciando validación de puente entre octocromo y titiritero...");
   
   try {
     const browser = await puppeteer.launch({
+      executablePath: '/usr/bin/google-chrome', // Ajusta según el path en tu runner
       headless: "new",
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
@@ -21,9 +22,3 @@ async function checkBridge() {
 }
 
 checkBridge();
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Validar arquitectura del puente
-        run: node test-bridge.js
-        continue-on-error: false
