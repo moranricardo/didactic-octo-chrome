@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const puppeteer = require('puppeteer-core');
+=======
+const puppeteer = require('puppeteer');
+>>>>>>> bb018d5 (Limpiar y restaurar test-bridge.js)
 
 async function checkBridge() {
   console.log("Iniciando validación de puente entre octocromo y titiritero...");
@@ -21,4 +25,8 @@ async function checkBridge() {
   }
 }
 
+<<<<<<< HEAD
 checkBridge();
+=======
+checkBridge();
+>>>>>>> bb018d5 (Limpiar y restaurar test-bridge.js)
