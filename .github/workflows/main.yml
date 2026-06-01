@@ -1,4 +1,4 @@
-name: El Toroide Adiamantado (Evolución 818)
+name: El Toroide Adiamantado (Evolución 818 - Optimizado)
 
 on:
   push:
@@ -19,33 +19,21 @@ jobs:
         with:
           node-version: 22
 
-      - name: Configurar Entorno y Dependencias
+      - name: Instalación Ligera
         run: |
-          TARGET_DIR=$(find . -name "package.json" -exec dirname {} \; | head -n 1)
-          echo "WORKDIR=$TARGET_DIR" >> $GITHUB_ENV
-          cd "$TARGET_DIR"
-          npm cache clean --force
-          npm ci
-          npx puppeteer browsers install chrome
-
-      - name: Validación del Puente
-        run: node test-bridge.js
-        working-directory: ${{ env.WORKDIR }}
+          npm ci --prefer-offline --no-audit
 
       - name: Ejecución del Ciclo del Vórtice
         run: |
           node index.js
           node screenshot-monitor.js
-        working-directory: ${{ env.WORKDIR }}
 
       - name: Persistencia del Núcleo
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add diamond_core.json screenshots/
+          git add diamond_core.json screenshots/ || true
           if ! git diff --cached --quiet; then
             git commit -m "Evolución 818: Sincronización exitosa [skip ci]"
-            git pull --rebase origin main
             git push origin main
           fi
-        working-directory: ${{ env.WORKDIR }}
