@@ -10,6 +10,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    env:
+      NODE_ENV: production
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,19 +25,8 @@ jobs:
 
       - name: Instalación Ligera
         run: |
-          npm ci --prefer-offline --no-audit
+          npm ci --prefer-offline
 
-      - name: Ejecución del Ciclo del Vórtice
+      - name: Run node index.js
         run: |
           node index.js
-          node screenshot-monitor.js
-
-      - name: Persistencia del Núcleo
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add diamond_core.json screenshots/ || true
-          if ! git diff --cached --quiet; then
-            git commit -m "Evolución 818: Sincronización exitosa [skip ci]"
-            git push origin main
-          fi
