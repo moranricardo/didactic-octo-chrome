@@ -1,14 +1,26 @@
 import puppeteer from 'puppeteer-core';
 
-(async () => {
+// Detección dinámica del ejecutable según el entorno
+const executablePath = process.env.GITHUB_ACTIONS
+  ? '/usr/bin/google-chrome'
+  : '/data/data/com.termux/files/usr/lib/chromium/headless_shell';
+
+try {
   const browser = await puppeteer.launch({
-    executablePath: '/data/data/com.termux/files/usr/lib/chromium/headless_shell',
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    executablePath,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--headless=new'
+    ]
   });
 
   const page = await browser.newPage();
-  await page.goto('https://www.google.com');
-  await page.screenshot({ path: 'evidencias/captura.png' });
-  console.log('Captura realizada con éxito');
+  // Tu flujo base de scraping o monitoreo aquí
+  
   await browser.close();
-})();
+  console.log("Proceso completado exitosamente.");
+} catch (error) {
+  console.error("Error durante la ejecución:", error);
+  process.exit(1);
+}
