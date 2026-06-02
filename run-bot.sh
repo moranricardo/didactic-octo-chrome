@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 # Protocolo 818 - Ejecución automatizada
 
 # 1. Limpieza inicial de seguridad
