@@ -4,7 +4,7 @@ import fs from 'fs';
 const CONFIG = {
     GERRIT_HOST: 'android-review.googlesource.com',
     ENDPOINT: '/changes/?q=status:open+(label:Code-Review-2+OR+label:Verified-1)&n=3&o=LABELS',
-    TARGET_REPO: 'moranricardo/didactic-octo-chrome'
+    STATE_FILE: 'state.json'
 };
 
 function consultarGerrit(endpoint) {
@@ -22,18 +22,31 @@ function consultarGerrit(endpoint) {
     });
 }
 
-async function auditarCambiosAbiertos() {
-    console.log("--- 👁️ [Fase Auditoría] Escaneando Gerrit ---");
-    try {
-        const cambios = await consultarGerrit(CONFIG.ENDPOINT);
-        const estadoActual = cambios.map(c => ({
-            id: c.id, change_id: c.change_id, subject: c.subject, owner: c.owner.name, updated: c.updated
-        }));
-        fs.writeFileSync('state.json', JSON.stringify(estadoActual, null, 2));
-        console.log(`✅ [Auditoría] ${estadoActual.length} cambios mapeados.`);
-    } catch (error) {
-        console.error("🚨 [Auditoría] Fallo:", error.message);
+async function procesarCicloInteligente() {
+    console.log("--- 🧠 [Fase Cognitiva] Comparando estado del Duat ---");
+    
+    let estadoPrevio = [];
+    if (fs.existsSync(CONFIG.STATE_FILE)) {
+        estadoPrevio = JSON.parse(fs.readFileSync(CONFIG.STATE_FILE, 'utf8'));
     }
+
+    const cambiosActuales = await consultarGerrit(CONFIG.ENDPOINT);
+    const estadoActual = cambiosActuales.map(c => ({
+        id: c.id, change_id: c.change_id, subject: c.subject
+    }));
+
+    // Comparar: ¿Qué hay de nuevo?
+    const idsPrevios = new Set(estadoPrevio.map(c => c.change_id));
+    const nuevasAnomalias = estadoActual.filter(c => !idsPrevios.has(c.change_id));
+
+    if (nuevasAnomalias.length > 0) {
+        console.log(`⚠️ [Alerta] Se detectaron ${nuevasAnomalias.length} nuevas anomalías.`);
+        nuevasAnomalias.forEach(a => console.log(` >> Nueva amenaza detectada: ${a.subject}`));
+    } else {
+        console.log("✅ [Estado] El sistema se mantiene en equilibrio. Sin nuevas amenazas.");
+    }
+
+    fs.writeFileSync(CONFIG.STATE_FILE, JSON.stringify(estadoActual, null, 2));
 }
 
-auditarCambiosAbiertos();
+procesarCicloInteligente();
