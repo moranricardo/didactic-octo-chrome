@@ -1,52 +1,51 @@
-import https from 'https';
 import fs from 'fs';
 
 const CONFIG = {
     GERRIT_HOST: 'android-review.googlesource.com',
-    ENDPOINT: '/changes/?q=status:open+(label:Code-Review-2+OR+label:Verified-1)&n=3&o=LABELS',
+    // Filtro de resiliencia: abiertos, con un Code-Review +2, limitados a 3 para no saturar memoria
+    ENDPOINT: '/changes/?q=status:open+label:Code-Review=2&n=3&o=LABELS',
     STATE_FILE: 'state.json'
 };
 
-function consultarGerrit(endpoint) {
-    return new Promise((resolve, reject) => {
-        const options = { hostname: CONFIG.GERRIT_HOST, path: endpoint, method: 'GET' };
-        https.get(options, (res) => {
-            let data = '';
-            res.on('data', (chunk) => { data += chunk; });
-            res.on('end', () => {
-                const magicPrefix = ")]}'\n";
-                let cleanData = data.startsWith(magicPrefix) ? data.substring(magicPrefix.length) : data;
-                resolve(JSON.parse(cleanData));
-            });
-        }).on('error', reject);
+async function consultarGerrit(endpoint) {
+    const url = `https://${CONFIG.GERRIT_HOST}${endpoint}`;
+    try {
+        const response = await fetch(url);
+        let body = await response.text();
+        if (body.startsWith(")]}'\n")) body = body.substring(5);
+        return JSON.parse(body);
+    } catch (error) {
+        console.error("🚨 Error de conexión en el Duat:", error.message);
+        return null;
+    }
+}
+
+async function auditarResiliencia() {
+    console.log("--- ⚖️ [Maat] Iniciando Auditoría de Resiliencia ---");
+    
+    const cambios = await consultarGerrit(CONFIG.ENDPOINT);
+    if (!cambios || cambios.length === 0) {
+        console.log("✅ El sistema se mantiene en equilibrio. Sin cambios estancados.");
+        return;
+    }
+
+    // Mapeamos solo lo esencial para nuestra base de conocimiento
+    const estadoActual = cambios.map(c => ({
+        id: c.id,
+        change_id: c.change_id,
+        subject: c.subject,
+        updated: c.updated,
+        status: 'STUCK_WITH_CR2'
+    }));
+
+    // El pilar del sistema: Persistencia local
+    fs.writeFileSync(CONFIG.STATE_FILE, JSON.stringify(estadoActual, null, 2));
+    console.log(`💾 [Memoria] ${estadoActual.length} anomalías de resiliencia guardadas en ${CONFIG.STATE_FILE}.`);
+    
+    // Imprimimos el reporte en la terminal
+    estadoActual.forEach(a => {
+        console.log(`⚠️ Alerta: "${a.subject}" tiene CR+2 pero sigue sin integrarse.`);
     });
 }
 
-async function procesarCicloInteligente() {
-    console.log("--- 🧠 [Fase Cognitiva] Comparando estado del Duat ---");
-    
-    let estadoPrevio = [];
-    if (fs.existsSync(CONFIG.STATE_FILE)) {
-        estadoPrevio = JSON.parse(fs.readFileSync(CONFIG.STATE_FILE, 'utf8'));
-    }
-
-    const cambiosActuales = await consultarGerrit(CONFIG.ENDPOINT);
-    const estadoActual = cambiosActuales.map(c => ({
-        id: c.id, change_id: c.change_id, subject: c.subject
-    }));
-
-    // Comparar: ¿Qué hay de nuevo?
-    const idsPrevios = new Set(estadoPrevio.map(c => c.change_id));
-    const nuevasAnomalias = estadoActual.filter(c => !idsPrevios.has(c.change_id));
-
-    if (nuevasAnomalias.length > 0) {
-        console.log(`⚠️ [Alerta] Se detectaron ${nuevasAnomalias.length} nuevas anomalías.`);
-        nuevasAnomalias.forEach(a => console.log(` >> Nueva amenaza detectada: ${a.subject}`));
-    } else {
-        console.log("✅ [Estado] El sistema se mantiene en equilibrio. Sin nuevas amenazas.");
-    }
-
-    fs.writeFileSync(CONFIG.STATE_FILE, JSON.stringify(estadoActual, null, 2));
-}
-
-procesarCicloInteligente();
+auditarResiliencia();
