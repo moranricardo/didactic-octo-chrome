@@ -1,0 +1,32 @@
+name: El Toroide Adiamantado (Evolución 818 - Optimizado)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    env:
+      NODE_ENV: production
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalación Ligera
+        run: |
+          npm ci --prefer-offline
+
+      - name: Run node index.js
+        run: |
+          node index.js

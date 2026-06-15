@@ -1,0 +1,13 @@
+{
+  "name": "didactic-octo-chrome",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "monitor": "node screenshot-monitor.js",
+    "all": "node index.js && node screenshot-monitor.js"
+  },
+  "dependencies": {
+    "puppeteer-core": "latest"
+  }
+}
