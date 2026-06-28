@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-06-28T21:34:29.580Z",
+  "status": "STABLE",
+  "totalScanned": 500,
+  "anomaliesDetected": 0,
+  "anomalies": [],
+  "auditor": {
+    "status": "STABLE",
+    "timestamp": "2026-06-28T21:34:29.509Z",
+    "httpCode": 200
+  }
+}
