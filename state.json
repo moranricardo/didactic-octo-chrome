@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-06-28T10:38:38.293Z",
+  "timestamp": "2026-06-28T12:13:14.612Z",
   "status": "STABLE",
-  "anomaliesDetected": 120,
+  "anomaliesDetected": 119,
   "anomalies": [
     {
       "changeId": "I9e366b96358c56a58586e8f173bff0bee522c5b9",
@@ -716,12 +716,6 @@
       "changeNumber": 4127313,
       "subject": "ANDROID: pKVM: x86: Expose memcache refill API",
       "updated": "2026-06-25 10:16:24.000000000"
-    },
-    {
-      "changeId": "Id91e3d7afbc9202cc6b34c5d0529e8ecfa24505e",
-      "changeNumber": 4127153,
-      "subject": "Extend ToastTest timeout for automotive",
-      "updated": "2026-06-25 06:50:36.000000000"
     }
   ]
 }
