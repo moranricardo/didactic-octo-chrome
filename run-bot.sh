@@ -1,21 +1,16 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# Protocolo 818 - Ejecución automatizada
-
-# 1. Limpieza inicial de seguridad
-rm -f evidencias/captura.png
-
-# 2. Ejecutar bot
-echo "🤖 Iniciando captura..."
-if node index.js; then
-    echo "📸 Captura completada."
+cd /data/data/com.termux/files/home/didactic-octo-chrome
+while true; do
+    echo "[$(date)] 🤖 Iniciando auditoría..."
     
-    # 3. Blindaje automático
-    if [ -f "evidencias/captura.png" ]; then
-        echo "🔒 Blindando..."
-        bash blindar.sh "evidencias/captura.png"
-    fi
-else
-    echo "❌ Error en el bot."
-fi
+    # Ejecutamos el bot y forzamos que el script continúe aunque el bot falle
+    node index.cjs || echo "⚠️ El bot finalizó con error, pero continuamos..."
 
-echo "✅ Proceso finalizado."
+    # Blindaje
+    if [ -f "evidencias/captura.png" ]; then
+        ./blindar.sh "evidencias/captura.png"
+    fi
+
+    echo "✅ Ciclo terminado. Esperando 1 hora..."
+    sleep 3600
+done

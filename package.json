@@ -8,6 +8,6 @@
     "all": "node index.js && node screenshot-monitor.js"
   },
   "dependencies": {
-    "puppeteer-core": "latest"
+    "puppeteer-core": "^25.2.1"
   }
 }
