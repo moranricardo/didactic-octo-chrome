@@ -25,10 +25,8 @@ jobs:
 
       - name: Instalación Ligera
         run: |
-          cd didactic-octo-chrome
           npm ci --prefer-offline
 
       - name: Run node index.js
         run: |
-          cd didactic-octo-chrome
           node index.js
