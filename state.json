@@ -1,43 +1,49 @@
 {
-  "timestamp": "2026-06-28T04:44:14.526Z",
+  "timestamp": "2026-06-28T08:17:15.728Z",
   "status": "STABLE",
   "anomaliesDetected": 120,
   "anomalies": [
     {
-      "changeId": "I0941609ab44d36c220b3c750de5dd9d60538ec25",
-      "changeNumber": 4087028,
-      "subject": "[CameraX] Rename ImageCapture.java to ImageCapture.kt",
-      "updated": "2026-06-28 03:51:33.000000000"
+      "changeId": "I9e366b96358c56a58586e8f173bff0bee522c5b9",
+      "changeNumber": 4087026,
+      "subject": "[CameraX] Rename StreamSharing files to Kotlin",
+      "updated": "2026-06-28 07:00:27.000000000"
     },
     {
       "changeId": "Id80e3208f03426fc62aef128617d19fd6e6d0b67",
       "changeNumber": 4089912,
       "subject": "docs(ui-text): clean up KDocs for text styling helper APIs",
-      "updated": "2026-06-28 03:45:36.000000000"
+      "updated": "2026-06-28 05:07:22.000000000"
     },
     {
       "changeId": "I75413ccb0337e6becf7d57f2f2cb3adf53a8f7e9",
       "changeNumber": 4089911,
       "subject": "docs(foundation): clean up KDocs for TextFieldState",
-      "updated": "2026-06-28 03:45:06.000000000"
-    },
-    {
-      "changeId": "Ie09cc060db1b251189525f1dc5f3159aaa6e1b23",
-      "changeNumber": 4107276,
-      "subject": "fix: catch DeadSystemException during playSoundEffect",
-      "updated": "2026-06-28 03:44:56.000000000"
-    },
-    {
-      "changeId": "Ia865dd2c99eb218cc675f2648c0c50bba6609190",
-      "changeNumber": 4107493,
-      "subject": "test: Add regression tests for playSoundEffect DeadSystemException",
-      "updated": "2026-06-28 03:44:55.000000000"
+      "updated": "2026-06-28 05:00:23.000000000"
     },
     {
       "changeId": "Ic22364188d750fab85cbf648cdf2c8ce96ab4129",
       "changeNumber": 4088697,
       "subject": "Improve documentation and add Material-based samples for Keyboard APIs",
-      "updated": "2026-06-28 03:44:06.000000000"
+      "updated": "2026-06-28 04:59:27.000000000"
+    },
+    {
+      "changeId": "Ie09cc060db1b251189525f1dc5f3159aaa6e1b23",
+      "changeNumber": 4107276,
+      "subject": "fix: catch DeadSystemException during playSoundEffect",
+      "updated": "2026-06-28 04:58:28.000000000"
+    },
+    {
+      "changeId": "Ia865dd2c99eb218cc675f2648c0c50bba6609190",
+      "changeNumber": 4107493,
+      "subject": "test: Add regression tests for playSoundEffect DeadSystemException",
+      "updated": "2026-06-28 04:58:28.000000000"
+    },
+    {
+      "changeId": "I0941609ab44d36c220b3c750de5dd9d60538ec25",
+      "changeNumber": 4087028,
+      "subject": "[CameraX] Rename ImageCapture.java to ImageCapture.kt",
+      "updated": "2026-06-28 03:51:33.000000000"
     },
     {
       "changeId": "Ie64c03dddb1e72eab497376f47450ca627f2c23a",
@@ -428,12 +434,6 @@
       "changeNumber": 4144675,
       "subject": "[AW] Unhide the enqueuePreconnect API",
       "updated": "2026-06-26 16:04:51.000000000"
-    },
-    {
-      "changeId": "I9e366b96358c56a58586e8f173bff0bee522c5b9",
-      "changeNumber": 4087026,
-      "subject": "[CameraX] Rename StreamSharing files to Kotlin",
-      "updated": "2026-06-26 15:32:07.000000000"
     },
     {
       "changeId": "Ia77e4fcd7fb7eeb5078f062195a464343f4d0e62",
