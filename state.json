@@ -1,7 +1,727 @@
 {
-  "module": "huella-cross-validator",
-  "timestamp": "2026-06-15T00:29:41.050Z",
+  "timestamp": "2026-06-28T04:44:14.526Z",
   "status": "STABLE",
-  "httpCode": 200,
-  "payloadSizeKB": 89.04
+  "anomaliesDetected": 120,
+  "anomalies": [
+    {
+      "changeId": "I0941609ab44d36c220b3c750de5dd9d60538ec25",
+      "changeNumber": 4087028,
+      "subject": "[CameraX] Rename ImageCapture.java to ImageCapture.kt",
+      "updated": "2026-06-28 03:51:33.000000000"
+    },
+    {
+      "changeId": "Id80e3208f03426fc62aef128617d19fd6e6d0b67",
+      "changeNumber": 4089912,
+      "subject": "docs(ui-text): clean up KDocs for text styling helper APIs",
+      "updated": "2026-06-28 03:45:36.000000000"
+    },
+    {
+      "changeId": "I75413ccb0337e6becf7d57f2f2cb3adf53a8f7e9",
+      "changeNumber": 4089911,
+      "subject": "docs(foundation): clean up KDocs for TextFieldState",
+      "updated": "2026-06-28 03:45:06.000000000"
+    },
+    {
+      "changeId": "Ie09cc060db1b251189525f1dc5f3159aaa6e1b23",
+      "changeNumber": 4107276,
+      "subject": "fix: catch DeadSystemException during playSoundEffect",
+      "updated": "2026-06-28 03:44:56.000000000"
+    },
+    {
+      "changeId": "Ia865dd2c99eb218cc675f2648c0c50bba6609190",
+      "changeNumber": 4107493,
+      "subject": "test: Add regression tests for playSoundEffect DeadSystemException",
+      "updated": "2026-06-28 03:44:55.000000000"
+    },
+    {
+      "changeId": "Ic22364188d750fab85cbf648cdf2c8ce96ab4129",
+      "changeNumber": 4088697,
+      "subject": "Improve documentation and add Material-based samples for Keyboard APIs",
+      "updated": "2026-06-28 03:44:06.000000000"
+    },
+    {
+      "changeId": "Ie64c03dddb1e72eab497376f47450ca627f2c23a",
+      "changeNumber": 4147108,
+      "subject": "Add FlatMeasurePass",
+      "updated": "2026-06-27 21:40:30.000000000"
+    },
+    {
+      "changeId": "I966a70418499338dda76167cf8661ce4fbbbe5f0",
+      "changeNumber": 4133596,
+      "subject": "Add Showcase demo for BannerStyle custom corner radius and refactored sections",
+      "updated": "2026-06-27 20:09:29.000000000"
+    },
+    {
+      "changeId": "Ic1f04f21f7eafb9163e8b5b01a4398fbc87d6970",
+      "changeNumber": 3972646,
+      "subject": "Add new CurvedRect shape to SurfaceEntity",
+      "updated": "2026-06-27 16:39:07.000000000"
+    },
+    {
+      "changeId": "I8d8dcf3b35886a45428a12c30fc10f5327265623",
+      "changeNumber": 4087020,
+      "subject": "[CameraX] Rename Preview.java to Preview.kt",
+      "updated": "2026-06-27 11:37:23.000000000"
+    },
+    {
+      "changeId": "I64fd7fdcf6549976c0764a831abd27d70d83d4ec",
+      "changeNumber": 4147110,
+      "subject": "Permanently enable concurrent text field selection fix",
+      "updated": "2026-06-27 09:14:22.000000000"
+    },
+    {
+      "changeId": "Ib1c806c95d9248e1be830b8063d998fd3c56dbdb",
+      "changeNumber": 4147435,
+      "subject": "Permanently enable explore by touch hover handled fix",
+      "updated": "2026-06-27 07:18:26.000000000"
+    },
+    {
+      "changeId": "I1d2a1c786ca9aff9c67cbe91dfbbba3afab24a74",
+      "changeNumber": 4136513,
+      "subject": "Move ComposeTestConfig out of the v2 package",
+      "updated": "2026-06-27 07:01:19.000000000"
+    },
+    {
+      "changeId": "Ie5b3e197c71af072080df7d5583f94153680f8aa",
+      "changeNumber": 4132433,
+      "subject": "Merged and refactored TestRuleTextureTest into TextureTest.",
+      "updated": "2026-06-27 07:01:19.000000000"
+    },
+    {
+      "changeId": "I61db0221fe9ce362c8e8e3a432254d31be985909",
+      "changeNumber": 4129714,
+      "subject": "Create ImageBasedLightingAssetTest and migrate from TestRuleImageBasedLightingAssetTest",
+      "updated": "2026-06-27 07:01:18.000000000"
+    },
+    {
+      "changeId": "Ibfa5fe0566c03c4d2dafdf4399b29a328ee4de94",
+      "changeNumber": 4145675,
+      "subject": "perf(foundation): enable isBasicTextFieldSizeOptimizationEnabled",
+      "updated": "2026-06-27 04:36:34.000000000"
+    },
+    {
+      "changeId": "I4ce71c4166afb2a5d478d13c5f239ae64bc7c91b",
+      "changeNumber": 4146856,
+      "subject": "Revert^2 \"Reapply \"Improve performance of accessibility in compose\"\"",
+      "updated": "2026-06-27 04:36:34.000000000"
+    },
+    {
+      "changeId": "I78d227708076e253b040c3cd69c4a1f881c0fbdf",
+      "changeNumber": 4146715,
+      "subject": "docs: Update run_tests skill with screenshot emulator requirements",
+      "updated": "2026-06-27 04:36:32.000000000"
+    },
+    {
+      "changeId": "I88161dd009b8815c21470c28cabc5a5a51aecb74",
+      "changeNumber": 4121973,
+      "subject": "Merged and refactored TestRuleScenePoseTest into ScenePoseTest.",
+      "updated": "2026-06-27 04:36:32.000000000"
+    },
+    {
+      "changeId": "Icb25482339c328d879136e415bfa7c2ce4b8d208",
+      "changeNumber": 4129053,
+      "subject": "Merged and refactored TestRuleSceneTest into SceneTest.",
+      "updated": "2026-06-27 04:36:32.000000000"
+    },
+    {
+      "changeId": "Ib9679d3ca4e13092046425de65fc08d49c275678",
+      "changeNumber": 4092351,
+      "subject": "Improve object lookup in pages with multiple ScrollViews",
+      "updated": "2026-06-27 04:36:02.000000000"
+    },
+    {
+      "changeId": "Ifb63986bd613d995745c1e7a7eb66d38648faaa5",
+      "changeNumber": 4128753,
+      "subject": "Remove creating a CalendarSystemClock unnecessarily",
+      "updated": "2026-06-27 04:36:01.000000000"
+    },
+    {
+      "changeId": "I3061812bfd869749afb406219c9b0be9ca9ab260",
+      "changeNumber": 4138393,
+      "subject": "ANDROID: drivers/wrapfd: Add support for high priority I/O requests",
+      "updated": "2026-06-27 00:31:20.000000000"
+    },
+    {
+      "changeId": "Ib65da8c1f8179c1dfd5f2528b54209c155888ae3",
+      "changeNumber": 4061372,
+      "subject": "Add new hintText semantic property",
+      "updated": "2026-06-27 00:18:20.000000000"
+    },
+    {
+      "changeId": "I7adf67920f6c1f8d6f7e9d3e6cc0fc1fa53c7c84",
+      "changeNumber": 4118575,
+      "subject": "ANDROID: block: add vendor hooks to implement IO qos tracking in DDK modules.",
+      "updated": "2026-06-26 23:55:25.000000000"
+    },
+    {
+      "changeId": "I7156f2771f66d1758bab173293552d9bfffa453a",
+      "changeNumber": 4147102,
+      "subject": "Properly hide methods that were never meant to be visible",
+      "updated": "2026-06-26 23:37:19.000000000"
+    },
+    {
+      "changeId": "Ic7b7197118b298e34e4934ded7eade758f426f06",
+      "changeNumber": 4146975,
+      "subject": "ANDROID: drivers/virt: pkvm: Fix power SMC call arguments",
+      "updated": "2026-06-26 23:19:44.000000000"
+    },
+    {
+      "changeId": "I8ca72b4ac77a2955194fe9c4d745278c1e80dd6c",
+      "changeNumber": 4146635,
+      "subject": "Always hide classpath items",
+      "updated": "2026-06-26 23:18:40.000000000"
+    },
+    {
+      "changeId": "If2a5aa377ef092c19e5f009b3fb97267aba765ae",
+      "changeNumber": 4131239,
+      "subject": "Move NavHost to NavigationBackHandler",
+      "updated": "2026-06-26 22:55:14.000000000"
+    },
+    {
+      "changeId": "Id8f574b8675435bef13f0603538b790d3a1abd23",
+      "changeNumber": 4122235,
+      "subject": "Merge c17fdf62aeec (\"Merge tag 'vfs-7.2-rc1.writeback' of git://git.kernel.org/pub/scm/linux/kernel/git/vfs/vfs\") into android-mainline",
+      "updated": "2026-06-26 21:58:58.000000000"
+    },
+    {
+      "changeId": "Ib636f341ba1a79c36ac7ebe662c32d3fe6a34061",
+      "changeNumber": 4118576,
+      "subject": "ANDROID: GKI: Update symbols list file for honor",
+      "updated": "2026-06-26 21:58:34.000000000"
+    },
+    {
+      "changeId": "Iaf03a01f756c764a0729872117727fb879e1d97e",
+      "changeNumber": 4122236,
+      "subject": "Merge de02909ae81a (\"Merge tag 'pull-configfs-fixed' of git://git.kernel.org/pub/scm/linux/kernel/git/viro/vfs\") into android-mainline",
+      "updated": "2026-06-26 21:40:40.000000000"
+    },
+    {
+      "changeId": "I1123c45c3c83a220933f32f381178a45303e9f9d",
+      "changeNumber": 4144356,
+      "subject": "Automatic import from libink.so_20260625_0128_RC00",
+      "updated": "2026-06-26 21:35:56.000000000"
+    },
+    {
+      "changeId": "I55e7e9a2c6e009df7675fecd89213df4de067da2",
+      "changeNumber": 3866532,
+      "subject": "Support get IcingSearchEngine payload size in AppSearchImpl.",
+      "updated": "2026-06-26 21:22:10.000000000"
+    },
+    {
+      "changeId": "I9a1f4e04c929f03ebbf1148ae11752f4fca84266",
+      "changeNumber": 4134974,
+      "subject": "Add type-safe instantiate to FragmentFactory",
+      "updated": "2026-06-26 21:19:52.000000000"
+    },
+    {
+      "changeId": "I6cac293c81d3e46fddb658a718c714f9403d9346",
+      "changeNumber": 4147036,
+      "subject": "Add test for maximum GBL stack usage",
+      "updated": "2026-06-26 21:16:17.000000000"
+    },
+    {
+      "changeId": "I4b059a8b333247469f93818a42850ee96270812a",
+      "changeNumber": 4145915,
+      "subject": "ANDROID: implement lazy preemption via vendor hook for 6.18",
+      "updated": "2026-06-26 21:12:06.000000000"
+    },
+    {
+      "changeId": "Ieaa217759c37f012537712e8700858352e3c56f4",
+      "changeNumber": 4146416,
+      "subject": "ANDROID: GKI: Update symbol list",
+      "updated": "2026-06-26 21:11:58.000000000"
+    },
+    {
+      "changeId": "Iadae84fb4b77a39ef10b52ef559ae512bfe0d03c",
+      "changeNumber": 4120033,
+      "subject": "Add an API to fetch routing controller id from selected route",
+      "updated": "2026-06-26 20:27:53.000000000"
+    },
+    {
+      "changeId": "If4ae290f7695253ca2ae188d3312749f1c46e05b",
+      "changeNumber": 4129854,
+      "subject": "Suppress ListItem deprecation in ParticipantRow",
+      "updated": "2026-06-26 20:11:47.000000000"
+    },
+    {
+      "changeId": "I760c39433c210d508a590add07fd9e0e3d9bb282",
+      "changeNumber": 4131653,
+      "subject": "Revert \"Revert \"Reland: Update perfetto tracebox / traceprocesso...\"",
+      "updated": "2026-06-26 20:00:08.000000000"
+    },
+    {
+      "changeId": "Id262d6fe35f3786cd7f765bc6b48201540bc24cc",
+      "changeNumber": 4131654,
+      "subject": "Revert \"Revert \"Reland opt in (as opposed to opt out) proto filt...\"",
+      "updated": "2026-06-26 20:00:07.000000000"
+    },
+    {
+      "changeId": "I549905a1208c8d2f08d1fefd3822df4ce629e65d",
+      "changeNumber": 3989434,
+      "subject": "Initial implementation of Page Indicator for Glimmer",
+      "updated": "2026-06-26 19:03:57.000000000"
+    },
+    {
+      "changeId": "I5361a999c81e92251f7dbc08bec8def928f0d8a6",
+      "changeNumber": 4134754,
+      "subject": "Update golden images (auto-generated from Scuba): invocation I39100010575523480",
+      "updated": "2026-06-26 19:03:50.000000000"
+    },
+    {
+      "changeId": "I4ac105d7bba51cc5ce34489e1e228201fb8c2fb1",
+      "changeNumber": 4114796,
+      "subject": "Remove deprecated semantics modifier overload.",
+      "updated": "2026-06-26 19:02:07.000000000"
+    },
+    {
+      "changeId": "Ie254d282136420e942312e8333de399db2ee3374",
+      "changeNumber": 4110996,
+      "subject": "Add startup macrobenchmarks and microbenchmarks for MaterialTheme",
+      "updated": "2026-06-26 19:01:57.000000000"
+    },
+    {
+      "changeId": "Ib86869b982580d675f5a28eb79b72c6bab529c9b",
+      "changeNumber": 4137575,
+      "subject": "Ink: Add some initial sample code for ink-brush module",
+      "updated": "2026-06-26 18:52:55.000000000"
+    },
+    {
+      "changeId": "I9e2fe31b1a482e8671e0713f253b92417a83999b",
+      "changeNumber": 4076652,
+      "subject": "Expose RemotePath DSL API",
+      "updated": "2026-06-26 18:28:41.000000000"
+    },
+    {
+      "changeId": "I966e79633533d3035350a3c7b74055deeba67003",
+      "changeNumber": 4137114,
+      "subject": "Disable head-locked panel by default in FieldOfView test app",
+      "updated": "2026-06-26 18:25:55.000000000"
+    },
+    {
+      "changeId": "Ifdf2ec626b62f8d67c748e3b3999c1406d629e9d",
+      "changeNumber": 4127018,
+      "subject": "Add retention policy to WorkMetricsInfoRepository",
+      "updated": "2026-06-26 18:25:41.000000000"
+    },
+    {
+      "changeId": "I5f9b0783ecf8b88a7016996af7aab375fe4d0a10",
+      "changeNumber": 4145799,
+      "subject": "Import translations. DO NOT MERGE ANYWHERE",
+      "updated": "2026-06-26 18:20:07.000000000"
+    },
+    {
+      "changeId": "I44301d0bb08d22bdc49c38db5b2fcf6c73cf385e",
+      "changeNumber": 4145875,
+      "subject": "Import translations. DO NOT MERGE ANYWHERE",
+      "updated": "2026-06-26 18:20:07.000000000"
+    },
+    {
+      "changeId": "If4aa58670ae36b7e4b9f0cde1175071f867d54de",
+      "changeNumber": 4145777,
+      "subject": "Import translations. DO NOT MERGE ANYWHERE",
+      "updated": "2026-06-26 18:20:07.000000000"
+    },
+    {
+      "changeId": "I500056e18443765bb05a43137e145092d671f05b",
+      "changeNumber": 4141654,
+      "subject": "Refactor AppState listeners and state clearing logic",
+      "updated": "2026-06-26 17:59:16.000000000"
+    },
+    {
+      "changeId": "Ief8b49f500d62b091c842508773477c80cc84885",
+      "changeNumber": 4077334,
+      "subject": "Fix YUV_420_888 CTS tests to use even height",
+      "updated": "2026-06-26 17:47:29.000000000"
+    },
+    {
+      "changeId": "I57d23cc877bc6576543110964cf3fa03ae2067e9",
+      "changeNumber": 4126393,
+      "subject": "ANDROID: wonder: Add script to monitor channel hopping offsets",
+      "updated": "2026-06-26 17:40:21.000000000"
+    },
+    {
+      "changeId": "I636bc52d47602d6a7a32fb11d2544a814c085834",
+      "changeNumber": 4126394,
+      "subject": "ANDROID: wonder: support HE preamble in fixed rate sanity check",
+      "updated": "2026-06-26 17:40:20.000000000"
+    },
+    {
+      "changeId": "Ia6f035ee15235c985d8fc16977419c4e3a95081c",
+      "changeNumber": 4126573,
+      "subject": "ANDROID: wonder: add internal TX/RX stats",
+      "updated": "2026-06-26 17:40:20.000000000"
+    },
+    {
+      "changeId": "Ie21b86e79217a528e0adbf8b67d38a53743338a1",
+      "changeNumber": 4144256,
+      "subject": "ANDROID: wonder: Enable TX_AMPDU_SETUP_IN_HW capability",
+      "updated": "2026-06-26 17:40:19.000000000"
+    },
+    {
+      "changeId": "I638149ddb51f2c7f5f1e719afade6f1bd76ccfd6",
+      "changeNumber": 4144255,
+      "subject": "ANDROID: wonder: fix critical RX bugs",
+      "updated": "2026-06-26 17:40:19.000000000"
+    },
+    {
+      "changeId": "Ic5181f297587bafae71283e92d2784c9b5145912",
+      "changeNumber": 4126119,
+      "subject": "ANDROID: wonder: Fix capability attributes order for backward compatibility",
+      "updated": "2026-06-26 17:40:16.000000000"
+    },
+    {
+      "changeId": "I937edae0fafbd6cd8779ae5940531ddef65fc57a",
+      "changeNumber": 4126118,
+      "subject": "ANDROID: wonder: Add rate adaptation report to GET_CAP command",
+      "updated": "2026-06-26 17:40:13.000000000"
+    },
+    {
+      "changeId": "I60ad17b2a534642b81eca8663de144ef052a82ec",
+      "changeNumber": 4126117,
+      "subject": "ANDROID: wonder: Update NSS capability encoding",
+      "updated": "2026-06-26 17:40:13.000000000"
+    },
+    {
+      "changeId": "I80816bd484b6b3b26efd348c42c3228087b6f586",
+      "changeNumber": 4144257,
+      "subject": "ANDROID: wonder: Concurrency/BH fixes",
+      "updated": "2026-06-26 17:40:13.000000000"
+    },
+    {
+      "changeId": "I9c34cb8b4dff0a2c1aac85a54a10d6bd109faa08",
+      "changeNumber": 4126613,
+      "subject": "ANDROID: wonder: Add AMPDU & RA support in SET_FEATURES vendor command",
+      "updated": "2026-06-26 17:40:13.000000000"
+    },
+    {
+      "changeId": "Ib05c93797f24abc66c1f9dcd8bad8a6698d37bea",
+      "changeNumber": 4144777,
+      "subject": "Gate TEMPLATE_RENDERER permission validation on FEATURE_AUTOMOTIVE",
+      "updated": "2026-06-26 17:35:16.000000000"
+    },
+    {
+      "changeId": "I2df2c8045d6f2614df0f45bb6c717676b835840b",
+      "changeNumber": 4144776,
+      "subject": "Validate resolved package of RendererService before binding",
+      "updated": "2026-06-26 17:35:11.000000000"
+    },
+    {
+      "changeId": "I18f9656621e1996b75909d76a1680f79bdb001b5",
+      "changeNumber": 4144080,
+      "subject": "Fix binder hijacking vulnerability in CarAppBinder",
+      "updated": "2026-06-26 17:34:58.000000000"
+    },
+    {
+      "changeId": "I99a891b63f9f1c2b611117fcf55db6254fe9ee77",
+      "changeNumber": 4145175,
+      "subject": "Make `@ComposableTarget` repeatable and document the semantics of repeating it",
+      "updated": "2026-06-26 17:32:55.000000000"
+    },
+    {
+      "changeId": "Ieaaa50e27285a42247d802773541bbf953c63e0c",
+      "changeNumber": 4133475,
+      "subject": "Merge android17-6.18 into android17-6.18-lts",
+      "updated": "2026-06-26 16:55:43.000000000"
+    },
+    {
+      "changeId": "Id7e4a0206746df4fa155fd78c33946afd3ed9025",
+      "changeNumber": 4144675,
+      "subject": "[AW] Unhide the enqueuePreconnect API",
+      "updated": "2026-06-26 16:04:51.000000000"
+    },
+    {
+      "changeId": "I9e366b96358c56a58586e8f173bff0bee522c5b9",
+      "changeNumber": 4087026,
+      "subject": "[CameraX] Rename StreamSharing files to Kotlin",
+      "updated": "2026-06-26 15:32:07.000000000"
+    },
+    {
+      "changeId": "Ia77e4fcd7fb7eeb5078f062195a464343f4d0e62",
+      "changeNumber": 4133893,
+      "subject": "[AW] Add Profile#enqueuePreconnect API",
+      "updated": "2026-06-26 15:13:24.000000000"
+    },
+    {
+      "changeId": "Ie247c74ab4398e42faca9957c359c9c3eb4dbe41",
+      "changeNumber": 4144155,
+      "subject": "Update golden images (auto-generated from Scuba): invocation I44500010577495725",
+      "updated": "2026-06-26 13:24:59.000000000"
+    },
+    {
+      "changeId": "I14fc7bc6a384c1903201b0894be1ba4e2ececb52",
+      "changeNumber": 4127956,
+      "subject": "Use material3-ripple library in material3",
+      "updated": "2026-06-26 13:12:47.000000000"
+    },
+    {
+      "changeId": "I7caaaa566ea080fa148c5e768bb1a0b6f7201c04",
+      "changeNumber": 4103574,
+      "subject": "kleaf_test: verify ddk_module generate_btf option",
+      "updated": "2026-06-26 11:54:04.000000000"
+    },
+    {
+      "changeId": "Ifd797df840257c8a314bfab26c80b11bc397b641",
+      "changeNumber": 4103276,
+      "subject": "feat: Implement DrawTextOnCircle for Java Player",
+      "updated": "2026-06-26 11:34:15.000000000"
+    },
+    {
+      "changeId": "I1a6a858dafbe9ceea4e0f42ecfbea1c9f78806cd",
+      "changeNumber": 4140633,
+      "subject": "Update golden images (auto-generated from Scuba): invocation I70200010576273649",
+      "updated": "2026-06-26 11:34:14.000000000"
+    },
+    {
+      "changeId": "Id8aad347ba0f5c1dbb8b689bb03fd7a629993ecd",
+      "changeNumber": 4146015,
+      "subject": "Fix potential crash in PdfView.dispatchViewportChanged",
+      "updated": "2026-06-26 11:11:46.000000000"
+    },
+    {
+      "changeId": "I5f4879c4452385939e7b25ceefa7cac1e9d9c437",
+      "changeNumber": 4139595,
+      "subject": "Migrate tests to Config-based v2 run*ComposeUiTest APIs",
+      "updated": "2026-06-26 10:53:22.000000000"
+    },
+    {
+      "changeId": "I78c50d222cb1eb2b0b58dd6ca1f4e02d17d6e20e",
+      "changeNumber": 4043025,
+      "subject": "Migrate tests to new v2 createComposeRule with config",
+      "updated": "2026-06-26 10:51:32.000000000"
+    },
+    {
+      "changeId": "Idc4ddba595fdc7cfc86e382bff45e20e812f6f0a",
+      "changeNumber": 4036526,
+      "subject": "Add parameterless overloads for create*ComposeRule APIs",
+      "updated": "2026-06-26 10:50:28.000000000"
+    },
+    {
+      "changeId": "Ibe5a72c05838c4a61d50766f56af8329c0966ae6",
+      "changeNumber": 4121333,
+      "subject": "Split protocol, catalog, platform and model packages from a2ui-core module to a2ui-model and a2ui-engine.",
+      "updated": "2026-06-26 10:17:37.000000000"
+    },
+    {
+      "changeId": "I444b1b8c0aeb006d06116a896f3d1493fb76d003",
+      "changeNumber": 4136653,
+      "subject": "FakeHealthConnectClient: Add permissions stubbing and thread-safety",
+      "updated": "2026-06-26 10:08:15.000000000"
+    },
+    {
+      "changeId": "Ib1c9837bdc4c26b08703339e2c53d36b8e58b878",
+      "changeNumber": 4139594,
+      "subject": "ANDROID: GKI: Update oplus symbols for lock-boost scheduler hooks",
+      "updated": "2026-06-26 08:59:58.000000000"
+    },
+    {
+      "changeId": "I4526c4eed28806f8562abb7ea2815a92f5307a5e",
+      "changeNumber": 4133693,
+      "subject": "ANDROID: sched: bounded deferral of CFS preemption for framework lock hints",
+      "updated": "2026-06-26 08:58:10.000000000"
+    },
+    {
+      "changeId": "I55e24833cce4d34e3a8673eddaa7d3c4ee6ff1f6",
+      "changeNumber": 4143393,
+      "subject": "Merged and refactored TestRulePointerCaptureComponentTest into PointerCaptureComponentTest.",
+      "updated": "2026-06-26 08:16:36.000000000"
+    },
+    {
+      "changeId": "I274c3e5eef7e7c75128b340ec7fcf2e26fd97de9",
+      "changeNumber": 4128256,
+      "subject": "Merged and refactored TestRuleEntityTest into EntityTest.",
+      "updated": "2026-06-26 07:55:01.000000000"
+    },
+    {
+      "changeId": "I9589164a216afc3f13ce41226bcfc5f8295120f3",
+      "changeNumber": 4118333,
+      "subject": "ANDROID: vendor hooks: add hooks to support the functionality and management of multiple swap devices.",
+      "updated": "2026-06-26 07:42:36.000000000"
+    },
+    {
+      "changeId": "Ie68d12592ad0bccadd4135da8410b06a532c5687",
+      "changeNumber": 4143273,
+      "subject": "Merged and refactored TestRuleBoundsComponentTest into BoundsComponentTest.",
+      "updated": "2026-06-26 07:37:59.000000000"
+    },
+    {
+      "changeId": "Ib7b562059271541342dbe707d641e04750f936cf",
+      "changeNumber": 4123493,
+      "subject": "ANDROID: GKI: vivo add symbols to symbol list",
+      "updated": "2026-06-26 07:35:47.000000000"
+    },
+    {
+      "changeId": "I7d396547f83223e5439d65b49a8faeae78d1b01e",
+      "changeNumber": 4132513,
+      "subject": "Merged and refactored TestRuleMainPanelEntityTest into MainPanelEntityTest.",
+      "updated": "2026-06-26 07:01:00.000000000"
+    },
+    {
+      "changeId": "Iaccfb5b48434ecf43622bc0c42e7608bb9c3093b",
+      "changeNumber": 4069561,
+      "subject": "Fix signature validation issue in Health Connect (b/509639710)",
+      "updated": "2026-06-26 07:01:00.000000000"
+    },
+    {
+      "changeId": "Ibceea7748ff25b24857fdff178de8385d9685d7f",
+      "changeNumber": 4129093,
+      "subject": "Merged and refactored TestRuleSpatialEnvironmentTest into SpatialEnvironmentTest.",
+      "updated": "2026-06-26 07:00:59.000000000"
+    },
+    {
+      "changeId": "Ic7e8ec73b1b9c5b400fb1b8f60211b5c9f9e9338",
+      "changeNumber": 4118833,
+      "subject": "Merged and refactored TestRuleActivitySpaceTest into ActivitySpaceTest.",
+      "updated": "2026-06-26 07:00:59.000000000"
+    },
+    {
+      "changeId": "I329f883563fc660f641af581a5657cbebc0c5273",
+      "changeNumber": 4129193,
+      "subject": "Merged and refactored TestRuleSpatialWindowTest into SpatialWindowTest.",
+      "updated": "2026-06-26 07:00:59.000000000"
+    },
+    {
+      "changeId": "I5bec02267b27ab03b5bfb2dfd95f687d8b2884d4",
+      "changeNumber": 4132413,
+      "subject": "Merged and refactored TestRuleGltfModelTest into GltfModelTest.",
+      "updated": "2026-06-26 07:00:59.000000000"
+    },
+    {
+      "changeId": "I67f6f9b8b9347bf6f87537e371fa72a30595745d",
+      "changeNumber": 4132453,
+      "subject": "Deprecate/Remove AnchorEntity usage in EntityTest.",
+      "updated": "2026-06-26 07:00:59.000000000"
+    },
+    {
+      "changeId": "Ia6d55228f699fee4e278ce25372b711fba1a8c4f",
+      "changeNumber": 4062020,
+      "subject": "Deprecate individual parameter overloads of run*ComposeUiTest v2 APIs",
+      "updated": "2026-06-26 05:23:44.000000000"
+    },
+    {
+      "changeId": "I1b3a3e310538661ae4f1bc36bcbd6dd88f044f28",
+      "changeNumber": 3967466,
+      "subject": "Expose public material3-ripple APIs",
+      "updated": "2026-06-26 00:38:12.000000000"
+    },
+    {
+      "changeId": "I49e81faa50e6e8d2bf82106a5cc63918ef2b2950",
+      "changeNumber": 4127955,
+      "subject": "Add benchmark for material3-ripple",
+      "updated": "2026-06-26 00:38:10.000000000"
+    },
+    {
+      "changeId": "I78061ba06e838b668747f7cc15d29d961be186d2",
+      "changeNumber": 4127953,
+      "subject": "Create material3-ripple module",
+      "updated": "2026-06-26 00:38:10.000000000"
+    },
+    {
+      "changeId": "Idcc2606757aa8a42e767e20bbaba0be7d2a08bba",
+      "changeNumber": 4127954,
+      "subject": "Move ripple code to new material3-ripple module",
+      "updated": "2026-06-26 00:38:10.000000000"
+    },
+    {
+      "changeId": "Ib37371047e787900f20329a6726f3db421ff239a",
+      "changeNumber": 3675214,
+      "subject": "Add expanded parameters for control of audio point sources",
+      "updated": "2026-06-26 00:24:17.000000000"
+    },
+    {
+      "changeId": "I1844f6111c7160a3c1f56ad0c798c9addbdc2cbb",
+      "changeNumber": 4088233,
+      "subject": "Set MoveEvent previous pose/scale based on reform event type",
+      "updated": "2026-06-26 00:17:56.000000000"
+    },
+    {
+      "changeId": "I8e41d5b3242b3afb7d51ed134fdf2e2331e06a21",
+      "changeNumber": 4137975,
+      "subject": "[Styles API] Fix animation two and from default values",
+      "updated": "2026-06-25 22:59:17.000000000"
+    },
+    {
+      "changeId": "I16560940f916ebc9e83530704ea43dc0d311206a",
+      "changeNumber": 4137573,
+      "subject": "ROOM = 3.0.0 SQLITE = 2.7.0",
+      "updated": "2026-06-25 21:51:18.000000000"
+    },
+    {
+      "changeId": "I57f658f4b7613741af3991c7c7dc046768b16ab3",
+      "changeNumber": 4112337,
+      "subject": "Implement execution duration APIs in WorkMetricsInfo.",
+      "updated": "2026-06-25 21:48:36.000000000"
+    },
+    {
+      "changeId": "I83f4ac87a20e3432641864c7a5164fd33e9ac010",
+      "changeNumber": 4062808,
+      "subject": "Add EnhancedHeaderDemoScreen showcase screen to demonstrate startHeaderImage usage.",
+      "updated": "2026-06-25 20:03:06.000000000"
+    },
+    {
+      "changeId": "Iff0309a3b18428270ed119e54de429653484380b",
+      "changeNumber": 4133734,
+      "subject": "fix(remote-core): implement RemotePathBase.addArc",
+      "updated": "2026-06-25 18:28:57.000000000"
+    },
+    {
+      "changeId": "I2d5a4e4c9ae1a1c99cc3ed201337dc26f491d5cb",
+      "changeNumber": 4114375,
+      "subject": "gbl: emit hypervisor props as 1, not \"true\"",
+      "updated": "2026-06-25 17:00:56.000000000"
+    },
+    {
+      "changeId": "I07549d4054addf4ca9f803c79c54d1d5a7990fe1",
+      "changeNumber": 4131514,
+      "subject": "Cosmetic improvements in code related to scrolling",
+      "updated": "2026-06-25 16:16:39.000000000"
+    },
+    {
+      "changeId": "Ic21de0105376fb3cfd39e6281d67ea31bfaf7617",
+      "changeNumber": 4098393,
+      "subject": "ANDROID: drivers/iommu: move fault handler out of cookie union",
+      "updated": "2026-06-25 15:36:23.000000000"
+    },
+    {
+      "changeId": "I2231989dda80532bc9f4454c0266c4259dc4269b",
+      "changeNumber": 4139973,
+      "subject": "Move A2UI schema package from a2ui-core to a2ui-model",
+      "updated": "2026-06-25 12:58:09.000000000"
+    },
+    {
+      "changeId": "I71ebc2bafeec4255080a63590afb97b5c83598b8",
+      "changeNumber": 4135993,
+      "subject": "ANDROID: pKVM: x86: Extend pkvm_refill_memcache for share_ro donation",
+      "updated": "2026-06-25 11:45:58.000000000"
+    },
+    {
+      "changeId": "I5d306c54a22f869596c0e81b2085ce6181e40d01",
+      "changeNumber": 4102797,
+      "subject": "Fix rememberRemoteScrollState composition and player-side scroll reset bugs",
+      "updated": "2026-06-25 11:16:11.000000000"
+    },
+    {
+      "changeId": "I3283e174f71e5e6c4f244e006b0b295a921c07b3",
+      "changeNumber": 4118733,
+      "subject": "Relocate SceneCore fake unit tests to internal package",
+      "updated": "2026-06-25 10:54:58.000000000"
+    },
+    {
+      "changeId": "Id9347687d3cb264149a143e6e50ab18fd56b6f2a",
+      "changeNumber": 4129534,
+      "subject": "ANDROID: iommu/vt-d: pKVM: Use exposed pKVM memcache refill API",
+      "updated": "2026-06-25 10:36:44.000000000"
+    },
+    {
+      "changeId": "Ia77e19f6e5e17aee34d96d06983e3680d1299413",
+      "changeNumber": 4127313,
+      "subject": "ANDROID: pKVM: x86: Expose memcache refill API",
+      "updated": "2026-06-25 10:16:24.000000000"
+    },
+    {
+      "changeId": "Id91e3d7afbc9202cc6b34c5d0529e8ecfa24505e",
+      "changeNumber": 4127153,
+      "subject": "Extend ToastTest timeout for automotive",
+      "updated": "2026-06-25 06:50:36.000000000"
+    }
+  ]
 }
