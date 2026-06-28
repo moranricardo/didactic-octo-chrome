@@ -1,4 +1,4 @@
-name: El Toroide Adiamantado (Evolución 818 - Optimizado)
+name: El Toroide Adiamantado (Evolución 818 - Integrado)
 
 on:
   push:
@@ -10,9 +10,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     env:
       NODE_ENV: production
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout code
@@ -24,9 +27,14 @@ jobs:
           node-version: 22
 
       - name: Instalación Ligera
-        run: |
-          npm ci --prefer-offline
+        run: npm ci --prefer-offline
 
-      - name: Run node index.cjs
+      - name: 📡 Ejecutar Motor de Red Ra Pulse
+        run: node index.cjs
+
+      - name: 💾 Persistir Estado en Repositorio
         run: |
-          node index.cjs
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add state.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: actualizar estado de auditoría" && git push)
