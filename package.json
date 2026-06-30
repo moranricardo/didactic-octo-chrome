@@ -1,13 +1,17 @@
 {
   "name": "didactic-octo-chrome",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
+  "main": "index.cjs",
   "scripts": {
-    "start": "node index.js",
-    "monitor": "node screenshot-monitor.js",
-    "all": "node index.js && node screenshot-monitor.js"
+    "start": "node index.cjs"
   },
-  "dependencies": {
-    "puppeteer-core": "^25.2.1"
-  }
+  "description": "Gerrit Telemetry Bridge - Protocol 818",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moranricardo/didactic-octo-chrome.git"
+  },
+  "author": "Ricardo Moran Maldonado",
+  "license": "ISC"
 }
+
