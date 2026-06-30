@@ -1,6 +1,29 @@
-*.log
-state.json
-state.json.gpg
+# --- Entorno Local ---
 node_modules/
 package-lock.json
 
+# --- Logs y Telemetría ---
+*.log
+logs/
+state.json
+state.json.gpg
+last_pulse.json
+
+# --- Configuración (IMPORTANTE) ---
+config.json
+
+# --- Evidencias y Blindaje ---
+evidencias/
+captura.png
+/*.png
+
+# --- Sistema y Metadatos ---
+.DS_Store
+.vscode/
+.idea/
+.env
+
+# --- Directorios de Prueba (Limpieza de estructura) ---
+scaling-meme/
+proyecto-nuevo/
+git-espejo/

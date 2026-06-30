@@ -1,10 +1,12 @@
 const fs = require('fs').promises;
-const { ejecutarSimulacion } = require('./url-auditor.cjs');
+const path = require('path');
 
-// CONFIGURACIÓN
-const GERRIT_HOST = 'android-review.googlesource.com'; 
-const ENDPOINT = '/changes/?q=status:open&o=LABELS'; 
-const STATE_FILE = './state.json';
+// RUTAS ACTUALIZADAS (Relativas a src/)
+const { ejecutarSimulacion } = require('./url-auditor.cjs');
+const { getGerritChanges } = require('../lib/lib-gerrit.js'); // Asegúrate de implementar esto aquí
+
+// CONFIGURACIÓN (Debería venir de config/config.json, pero mantenemos lógica aquí)
+const STATE_FILE = path.join(__dirname, '../data/state.json');
 
 const UMBRALES = {
     ANTIGUEDAD_MAXIMA_DIAS: 7,
@@ -12,6 +14,8 @@ const UMBRALES = {
     PALABRAS_EXCLUIDAS: ["Import translations", "Update golden images"]
 };
 
+// Lógica de limpieza movida a lib-gerrit.js si deseas mayor limpieza, 
+// o mantenida aquí por simplicidad.
 function cleanAndParseGerrit(textRaw) {
     const antiXssPrefix = ")]}'\n";
     let cleanText = textRaw;
@@ -27,44 +31,34 @@ async function auditRaPulse() {
     console.log("--- ⚖️ [Maat] Iniciando Auditoría de Resiliencia ---");
 
     try {
-        const url = `https://${GERRIT_HOST}${ENDPOINT}`;
-        const fetchOptions = {
-            method: 'GET',
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome-mobile-es-419/124.0.0.0 Mobile Safari/537.36',
-                'Accept': 'application/json'
-            }
-        };
-
-        console.log(`📡 Solicitando datos a ${GERRIT_HOST}...`);
-        const response = await fetch(url, fetchOptions);
+        // La lógica de fetch se puede abstraer a lib-gerrit.js en el futuro
+        const GERRIT_HOST = 'android-review.googlesource.com'; 
+        const url = `https://${GERRIT_HOST}/changes/?q=status:open&o=LABELS`;
+        
+        const response = await fetch(url, {
+            headers: { 'Accept': 'application/json' }
+        });
+        
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
 
         const rawText = await response.text();
         const changes = cleanAndParseGerrit(rawText);
-        
+
         const telemetriaAuditor = await ejecutarSimulacion();
 
         const anomalies = [];
         for (const change of changes) {
-            // 1. Filtrado de ruido: ignora cambios que contienen las palabras excluidas
             const esRuido = UMBRALES.PALABRAS_EXCLUIDAS.some(keyword => change.subject.includes(keyword));
             if (esRuido) continue;
 
-            // 2. Cálculo de antigüedad
             const diffDays = Math.ceil((new Date() - new Date(change.updated)) / (1000 * 60 * 60 * 24));
-            
-            // 3. Verificación de aprobación CR+2
             const crLabel = change.labels?.['Code-Review'] || {};
             const hasCR2 = crLabel.approved || (Array.isArray(crLabel.all) && crLabel.all.some(v => v.value >= UMBRALES.CRITICIDAD_MINIMA));
 
             if (hasCR2 && diffDays >= UMBRALES.ANTIGUEDAD_MAXIMA_DIAS) {
-                console.log(`⚠️ Alerta Crítica: "${change.subject}" lleva ${diffDays} días bloqueado.`);
                 anomalies.push({
                     changeId: change.change_id,
-                    changeNumber: change._number,
                     subject: change.subject,
-                    updated: change.updated,
                     daysPending: diffDays
                 });
             }
@@ -73,23 +67,17 @@ async function auditRaPulse() {
         const telemetry = {
             timestamp: new Date().toISOString(),
             status: "STABLE",
-            totalScanned: changes.length,
             anomaliesDetected: anomalies.length,
-            anomalies: anomalies,
+            anomalies,
             auditor: telemetriaAuditor
         };
 
         await fs.writeFile(STATE_FILE, JSON.stringify(telemetry, null, 2), 'utf-8');
-        console.log(`\n💾 [Memoria] Telemetría guardada: ${anomalies.length} alertas críticas detectadas.`);
+        console.log(`💾 [Memoria] Telemetría guardada en /data con ${anomalies.length} alertas.`);
 
     } catch (error) {
-        console.error(`\n❌ Fallo en el Duat: [${error.message}]`);
-        const failureState = {
-            timestamp: new Date().toISOString(),
-            status: "DEGRADED",
-            error: error.message
-        };
-        await fs.writeFile(STATE_FILE, JSON.stringify(failureState, null, 2), 'utf-8').catch(() => {});
+        console.error(`❌ Fallo en el Duat: [${error.message}]`);
+        await fs.writeFile(STATE_FILE, JSON.stringify({ status: "DEGRADED", error: error.message }), 'utf-8').catch(() => {});
     }
 }
 

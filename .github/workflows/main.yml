@@ -8,18 +8,20 @@ on:
     - cron: '*/30 * * * *'
 
 jobs:
-  build:
+  audit:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     env:
       NODE_ENV: production
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GERRIT_HOST: ${{ secrets.GERRIT_HOST }}
 
     steps:
-      - name: Checkout code
+      - name: Checkout del repositorio
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,9 +34,15 @@ jobs:
       - name: 📡 Ejecutar Motor de Red Ra Pulse
         run: node index.cjs
 
-      - name: 💾 Persistir Estado en Repositorio
+      - name: 💾 Persistir Estado
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add -f state.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: actualizar estado de auditoría" && git push)
+          if [ -n "$(git status --porcelain state.json)" ]; then
+            git config --global user.name 'github-actions[bot]'
+            git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+            git add state.json
+            git commit -m "chore: actualizar estado de auditoría [skip ci]"
+            git push
+          else
+            echo "No hay cambios en state.json, omitiendo commit."
+          fi
+
