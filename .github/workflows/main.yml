@@ -29,10 +29,10 @@ jobs:
           node-version: 22
 
       - name: Instalación Ligera
-        run: npm ci --prefer-offline
+        run: npm install --prefer-offline
 
       - name: 📡 Ejecutar Motor de Red Ra Pulse
-        run: node index.cjs
+        run: node src/index.cjs
 
       - name: 💾 Persistir Estado
         run: |
