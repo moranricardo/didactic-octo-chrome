@@ -1,9 +1,8 @@
 {
   "name": "didactic-octo-chrome",
   "version": "1.0.0",
-  "type": "commonjs",
-  "main": "src/index.cjs",
   "type": "module",
+  "main": "src/index.cjs",
   "scripts": {
     "start": "node index.cjs"
   },
@@ -13,6 +12,8 @@
     "url": "git+https://github.com/moranricardo/didactic-octo-chrome.git"
   },
   "author": "Ricardo Moran Maldonado",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer-core": "^25.2.1"
+  }
 }
-
