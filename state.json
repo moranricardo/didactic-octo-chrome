@@ -1,5 +1,43 @@
 [
   {
+    "id": "platform%2Fexternal%2Fu-boot~4151078",
+    "triplet_id": "platform%2Fexternal%2Fu-boot~u-boot-mainline~I9896ec229b3a395e4b4fb96c3399805bd3976c82",
+    "project": "platform/external/u-boot",
+    "branch": "u-boot-mainline",
+    "full_branch": "refs/heads/u-boot-mainline",
+    "attention_set": {
+      "1466604": {
+        "account": {
+          "_account_id": 1466604
+        },
+        "last_update": "2026-06-30 23:17:13.000000000",
+        "reason": "<GERRIT_ACCOUNT_1893074> replied on the change",
+        "reason_account": {
+          "_account_id": 1893074
+        }
+      }
+    },
+    "removed_from_attention_set": {},
+    "hashtags": [],
+    "change_id": "I9896ec229b3a395e4b4fb96c3399805bd3976c82",
+    "subject": "dt_fixup: re-encode /reserved-memory to the firmware cell width",
+    "status": "NEW",
+    "created": "2026-06-30 23:15:05.000000000",
+    "updated": "2026-07-01 01:02:27.000000000",
+    "submit_type": "MERGE_IF_NECESSARY",
+    "insertions": 173,
+    "deletions": 2,
+    "total_comment_count": 0,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4151078,
+    "virtual_id_number": 4151078,
+    "owner": {
+      "_account_id": 1893074
+    },
+    "current_revision_number": 1
+  },
+  {
     "id": "kernel%2Fcommon~4151815",
     "triplet_id": "kernel%2Fcommon~android12-5.10~I45d01a0691b5cbd0f3dacd77a286c12a260d9568",
     "project": "kernel/common",
@@ -31,7 +69,7 @@
     "subject": "ANDROID: dm-bow: Fix Use-After-free in dm_bow_dtr()",
     "status": "NEW",
     "created": "2026-06-30 20:40:37.000000000",
-    "updated": "2026-07-01 00:12:47.000000000",
+    "updated": "2026-07-01 01:01:55.000000000",
     "submit_type": "REBASE_IF_NECESSARY",
     "insertions": 5,
     "deletions": 5,
@@ -44,6 +82,927 @@
       "_account_id": 1891811
     },
     "current_revision_number": 3
+  },
+  {
+    "id": "platform%2Fframeworks%2Fsupport~4152178",
+    "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~I133d66926e101ec9eea12dbe2984693997dbaafe",
+    "project": "platform/frameworks/support",
+    "branch": "androidx-main",
+    "full_branch": "refs/heads/androidx-main",
+    "attention_set": {
+      "3619124": {
+        "account": {
+          "_account_id": 3619124
+        },
+        "last_update": "2026-07-01 00:55:43.000000000",
+        "reason": "A robot voted negatively on a label"
+      },
+      "3731219": {
+        "account": {
+          "_account_id": 3731219
+        },
+        "last_update": "2026-06-30 23:44:03.000000000",
+        "reason": "<GERRIT_ACCOUNT_3619124> replied on the change",
+        "reason_account": {
+          "_account_id": 3619124
+        }
+      },
+      "4052684": {
+        "account": {
+          "_account_id": 4052684
+        },
+        "last_update": "2026-06-30 23:44:03.000000000",
+        "reason": "<GERRIT_ACCOUNT_3619124> replied on the change",
+        "reason_account": {
+          "_account_id": 3619124
+        }
+      }
+    },
+    "removed_from_attention_set": {},
+    "hashtags": [],
+    "change_id": "I133d66926e101ec9eea12dbe2984693997dbaafe",
+    "subject": "Restrict ExponentialDecay API to LIBRARY scope",
+    "status": "NEW",
+    "created": "2026-06-30 23:42:39.000000000",
+    "updated": "2026-07-01 00:55:52.000000000",
+    "submit_type": "MERGE_ALWAYS",
+    "insertions": 1,
+    "deletions": 1,
+    "total_comment_count": 0,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4152178,
+    "virtual_id_number": 4152178,
+    "owner": {
+      "_account_id": 3619124
+    },
+    "current_revision_number": 1
+  },
+  {
+    "id": "kernel%2Fcommon~4143433",
+    "triplet_id": "kernel%2Fcommon~android15-6.6~I9589164a216afc3f13ce41226bcfc5f8295120f3",
+    "project": "kernel/common",
+    "branch": "android15-6.6",
+    "full_branch": "refs/heads/android15-6.6",
+    "attention_set": {
+      "1069543": {
+        "account": {
+          "_account_id": 1069543
+        },
+        "last_update": "2026-06-25 11:31:05.000000000",
+        "reason": "<GERRIT_ACCOUNT_4118957> replied on the change",
+        "reason_account": {
+          "_account_id": 4118957
+        }
+      },
+      "1157738": {
+        "account": {
+          "_account_id": 1157738
+        },
+        "last_update": "2026-06-26 08:47:48.000000000",
+        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
+        "reason_account": {
+          "_account_id": 4821391
+        }
+      },
+      "1293738": {
+        "account": {
+          "_account_id": 1293738
+        },
+        "last_update": "2026-06-26 08:47:48.000000000",
+        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
+        "reason_account": {
+          "_account_id": 4821391
+        }
+      },
+      "1402878": {
+        "account": {
+          "_account_id": 1402878
+        },
+        "last_update": "2026-06-26 08:47:48.000000000",
+        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
+        "reason_account": {
+          "_account_id": 4821391
+        }
+      },
+      "1557540": {
+        "account": {
+          "_account_id": 1557540
+        },
+        "last_update": "2026-06-26 08:47:48.000000000",
+        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
+        "reason_account": {
+          "_account_id": 4821391
+        }
+      },
+      "1572468": {
+        "account": {
+          "_account_id": 1572468
+        },
+        "last_update": "2026-06-26 08:47:48.000000000",
+        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
+        "reason_account": {
+          "_account_id": 4821391
+        }
+      },
+      "1625880": {
+        "account": {
+          "_account_id": 1625880
+        },
+        "last_update": "2026-06-26 08:47:48.000000000",
+        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
+        "reason_account": {
+          "_account_id": 4821391
+        }
+      },
+      "1869395": {
+        "account": {
+          "_account_id": 1869395
+        },
+        "last_update": "2026-06-26 08:47:48.000000000",
+        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
+        "reason_account": {
+          "_account_id": 4821391
+        }
+      },
+      "1870730": {
+        "account": {
+          "_account_id": 1870730
+        },
+        "last_update": "2026-06-26 08:47:48.000000000",
+        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
+        "reason_account": {
+          "_account_id": 4821391
+        }
+      },
+      "1934715": {
+        "account": {
+          "_account_id": 1934715
+        },
+        "last_update": "2026-06-26 08:47:48.000000000",
+        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
+        "reason_account": {
+          "_account_id": 4821391
+        }
+      }
+    },
+    "removed_from_attention_set": {
+      "1945845": {
+        "account": {
+          "_account_id": 1945845
+        },
+        "last_update": "2026-06-29 23:14:10.000000000",
+        "reason": "<GERRIT_ACCOUNT_1945845> replied on the change",
+        "reason_account": {
+          "_account_id": 1945845
+        }
+      },
+      "3406862": {
+        "account": {
+          "_account_id": 3406862
+        },
+        "last_update": "2026-06-29 12:13:46.000000000",
+        "reason": "<GERRIT_ACCOUNT_3406862> replied on the change",
+        "reason_account": {
+          "_account_id": 3406862
+        }
+      },
+      "4118957": {
+        "account": {
+          "_account_id": 4118957
+        },
+        "last_update": "2026-07-01 00:55:23.000000000",
+        "reason": "<GERRIT_ACCOUNT_4118957> replied on the change",
+        "reason_account": {
+          "_account_id": 4118957
+        }
+      }
+    },
+    "hashtags": [],
+    "change_id": "I9589164a216afc3f13ce41226bcfc5f8295120f3",
+    "subject": "ANDROID: vendor hooks: add hooks to support the functionality and management of multiple swap devices.",
+    "status": "NEW",
+    "created": "2026-06-25 08:28:18.000000000",
+    "updated": "2026-07-01 00:55:23.000000000",
+    "submit_type": "REBASE_IF_NECESSARY",
+    "insertions": 37,
+    "deletions": 0,
+    "total_comment_count": 6,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4143433,
+    "virtual_id_number": 4143433,
+    "owner": {
+      "_account_id": 4118957
+    },
+    "current_revision_number": 4
+  },
+  {
+    "id": "kernel%2Fcommon~4118333",
+    "triplet_id": "kernel%2Fcommon~android17-6.18~I9589164a216afc3f13ce41226bcfc5f8295120f3",
+    "project": "kernel/common",
+    "branch": "android17-6.18",
+    "full_branch": "refs/heads/android17-6.18",
+    "attention_set": {
+      "1275554": {
+        "account": {
+          "_account_id": 1275554
+        },
+        "last_update": "2026-06-16 07:25:51.000000000",
+        "reason": "<GERRIT_ACCOUNT_4118957> replied on the change",
+        "reason_account": {
+          "_account_id": 4118957
+        }
+      },
+      "1499410": {
+        "account": {
+          "_account_id": 1499410
+        },
+        "last_update": "2026-06-16 07:25:51.000000000",
+        "reason": "<GERRIT_ACCOUNT_4118957> replied on the change",
+        "reason_account": {
+          "_account_id": 4118957
+        }
+      },
+      "1870730": {
+        "account": {
+          "_account_id": 1870730
+        },
+        "last_update": "2026-06-16 07:25:51.000000000",
+        "reason": "<GERRIT_ACCOUNT_4118957> replied on the change",
+        "reason_account": {
+          "_account_id": 4118957
+        }
+      },
+      "4941575": {
+        "account": {
+          "_account_id": 4941575
+        },
+        "last_update": "2026-06-22 02:26:17.000000000",
+        "reason": "Vote got outdated and was removed: Code-Review+1"
+      }
+    },
+    "removed_from_attention_set": {
+      "1069543": {
+        "account": {
+          "_account_id": 1069543
+        },
+        "last_update": "2026-06-16 16:33:55.000000000",
+        "reason": "Removed by <GERRIT_ACCOUNT_1069543> by clicking the attention icon",
+        "reason_account": {
+          "_account_id": 1069543
+        }
+      },
+      "1125653": {
+        "account": {
+          "_account_id": 1125653
+        },
+        "last_update": "2026-06-22 07:00:16.000000000",
+        "reason": "Removed by <GERRIT_ACCOUNT_1125653> by clicking the attention icon",
+        "reason_account": {
+          "_account_id": 1125653
+        }
+      },
+      "1157738": {
+        "account": {
+          "_account_id": 1157738
+        },
+        "last_update": "2026-06-26 04:43:02.000000000",
+        "reason": "removed on reply"
+      },
+      "3406862": {
+        "account": {
+          "_account_id": 3406862
+        },
+        "last_update": "2026-06-25 07:04:15.000000000",
+        "reason": "<GERRIT_ACCOUNT_3406862> replied on the change",
+        "reason_account": {
+          "_account_id": 3406862
+        }
+      },
+      "4118957": {
+        "account": {
+          "_account_id": 4118957
+        },
+        "last_update": "2026-06-29 04:07:59.000000000",
+        "reason": "<GERRIT_ACCOUNT_4118957> replied on the change",
+        "reason_account": {
+          "_account_id": 4118957
+        }
+      }
+    },
+    "hashtags": [],
+    "change_id": "I9589164a216afc3f13ce41226bcfc5f8295120f3",
+    "subject": "ANDROID: vendor hooks: add hooks to support the functionality and management of multiple swap devices.",
+    "status": "NEW",
+    "created": "2026-06-12 01:33:45.000000000",
+    "updated": "2026-07-01 00:54:25.000000000",
+    "submit_type": "REBASE_IF_NECESSARY",
+    "insertions": 34,
+    "deletions": 3,
+    "total_comment_count": 15,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4118333,
+    "virtual_id_number": 4118333,
+    "owner": {
+      "_account_id": 4118957
+    },
+    "current_revision_number": 12
+  },
+  {
+    "id": "platform%2Fframeworks%2Fsupport~4152142",
+    "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~If41fc80daab2465bcb6002043eb63969bdc97917",
+    "project": "platform/frameworks/support",
+    "branch": "androidx-main",
+    "full_branch": "refs/heads/androidx-main",
+    "attention_set": {
+      "1048725": {
+        "account": {
+          "_account_id": 1048725
+        },
+        "last_update": "2026-07-01 00:54:17.000000000",
+        "reason": "Vote got outdated and was removed: Presubmit-Ready+1"
+      }
+    },
+    "removed_from_attention_set": {},
+    "hashtags": [],
+    "change_id": "If41fc80daab2465bcb6002043eb63969bdc97917",
+    "subject": "[Styles API] Fix clip shape animation",
+    "status": "NEW",
+    "created": "2026-06-30 23:44:41.000000000",
+    "updated": "2026-07-01 00:54:17.000000000",
+    "submit_type": "MERGE_ALWAYS",
+    "insertions": 29,
+    "deletions": 4,
+    "total_comment_count": 0,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4152142,
+    "virtual_id_number": 4152142,
+    "owner": {
+      "_account_id": 1048725
+    },
+    "current_revision_number": 2
+  },
+  {
+    "id": "kernel%2Fcommon~4151715",
+    "triplet_id": "kernel%2Fcommon~android-mainline~I2f41e047fd77fc3a5b1c223caee4fc2bcfdf02cd",
+    "project": "kernel/common",
+    "branch": "android-mainline",
+    "full_branch": "refs/heads/android-mainline",
+    "topic": "v7.2-xattr",
+    "hashtags": [],
+    "change_id": "I2f41e047fd77fc3a5b1c223caee4fc2bcfdf02cd",
+    "subject": "ANDROID: selinux: don't mark the inode as initialized",
+    "status": "NEW",
+    "created": "2026-06-30 20:02:04.000000000",
+    "updated": "2026-07-01 00:40:28.000000000",
+    "submit_type": "REBASE_IF_NECESSARY",
+    "insertions": 4,
+    "deletions": 4,
+    "total_comment_count": 0,
+    "unresolved_comment_count": 0,
+    "work_in_progress": true,
+    "has_review_started": false,
+    "_number": 4151715,
+    "virtual_id_number": 4151715,
+    "owner": {
+      "_account_id": 1869395
+    },
+    "current_revision_number": 1
+  },
+  {
+    "id": "kernel%2Fcommon~4151275",
+    "triplet_id": "kernel%2Fcommon~android-mainline~I1dedcb26938def8d8de381c73aa6feb56b35c5be",
+    "project": "kernel/common",
+    "branch": "android-mainline",
+    "full_branch": "refs/heads/android-mainline",
+    "topic": "v7.2-xattr",
+    "attention_set": {
+      "1869395": {
+        "account": {
+          "_account_id": 1869395
+        },
+        "last_update": "2026-06-30 16:52:46.000000000",
+        "reason": "A robot voted negatively on a label"
+      }
+    },
+    "removed_from_attention_set": {},
+    "hashtags": [],
+    "change_id": "I1dedcb26938def8d8de381c73aa6feb56b35c5be",
+    "subject": "Merge ff8747aacaff (\"Merge tag 'vfs-7.2-rc1.xattr' of git://git.kernel.org/pub/scm/linux/kernel/git/vfs/vfs\") into android-mainline",
+    "status": "NEW",
+    "created": "2026-06-30 14:53:39.000000000",
+    "updated": "2026-07-01 00:40:26.000000000",
+    "submit_type": "REBASE_IF_NECESSARY",
+    "insertions": 0,
+    "deletions": 0,
+    "total_comment_count": 0,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4151275,
+    "virtual_id_number": 4151275,
+    "owner": {
+      "_account_id": 1869395
+    },
+    "current_revision_number": 1
+  },
+  {
+    "id": "kernel%2Fcommon~4151756",
+    "triplet_id": "kernel%2Fcommon~android17-6.18~I45d01a0691b5cbd0f3dacd77a286c12a260d9568",
+    "project": "kernel/common",
+    "branch": "android17-6.18",
+    "full_branch": "refs/heads/android17-6.18",
+    "topic": "cherrypicker-selfservice-L95900030140996897:N16100030907948546",
+    "attention_set": {
+      "1954115": {
+        "account": {
+          "_account_id": 1954115
+        },
+        "last_update": "2026-06-30 20:37:37.000000000",
+        "reason": "<GERRIT_ACCOUNT_1827146> replied on the change",
+        "reason_account": {
+          "_account_id": 1827146
+        }
+      }
+    },
+    "removed_from_attention_set": {},
+    "hashtags": [],
+    "change_id": "I45d01a0691b5cbd0f3dacd77a286c12a260d9568",
+    "subject": "ANDROID: dm-bow: Fix Use-After-free in dm_bow_dtr()",
+    "status": "NEW",
+    "created": "2026-06-30 20:35:03.000000000",
+    "updated": "2026-07-01 00:36:55.000000000",
+    "submit_type": "REBASE_IF_NECESSARY",
+    "insertions": 5,
+    "deletions": 5,
+    "total_comment_count": 0,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4151756,
+    "virtual_id_number": 4151756,
+    "owner": {
+      "_account_id": 1891811
+    },
+    "current_revision_number": 1
+  },
+  {
+    "id": "platform%2Fframeworks%2Fsupport~4111134",
+    "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~Id3dc9beac8153789e2dad81c3c50f67f72556f40",
+    "project": "platform/frameworks/support",
+    "branch": "androidx-main",
+    "full_branch": "refs/heads/androidx-main",
+    "attention_set": {},
+    "removed_from_attention_set": {
+      "1010101": {
+        "account": {
+          "_account_id": 1010101
+        },
+        "last_update": "2026-06-16 16:35:49.000000000",
+        "reason": "Reviewer/Cc was removed"
+      },
+      "1014545": {
+        "account": {
+          "_account_id": 1014545
+        },
+        "last_update": "2026-06-17 15:54:49.000000000",
+        "reason": "Reviewer/Cc was removed"
+      },
+      "1060473": {
+        "account": {
+          "_account_id": 1060473
+        },
+        "last_update": "2026-06-17 15:54:52.000000000",
+        "reason": "Reviewer/Cc was removed"
+      },
+      "1841368": {
+        "account": {
+          "_account_id": 1841368
+        },
+        "last_update": "2026-06-17 15:54:54.000000000",
+        "reason": "Reviewer/Cc was removed"
+      },
+      "1868325": {
+        "account": {
+          "_account_id": 1868325
+        },
+        "last_update": "2026-06-10 09:41:18.000000000",
+        "reason": "<GERRIT_ACCOUNT_1868325> replied on the change",
+        "reason_account": {
+          "_account_id": 1868325
+        }
+      },
+      "1943535": {
+        "account": {
+          "_account_id": 1943535
+        },
+        "last_update": "2026-06-17 15:55:12.000000000",
+        "reason": "Reviewer/Cc was removed"
+      },
+      "1953920": {
+        "account": {
+          "_account_id": 1953920
+        },
+        "last_update": "2026-06-17 15:54:57.000000000",
+        "reason": "Reviewer/Cc was removed"
+      },
+      "1970490": {
+        "account": {
+          "_account_id": 1970490
+        },
+        "last_update": "2026-06-17 15:55:01.000000000",
+        "reason": "Reviewer/Cc was removed"
+      },
+      "3425888": {
+        "account": {
+          "_account_id": 3425888
+        },
+        "last_update": "2026-06-23 17:53:51.000000000",
+        "reason": "<GERRIT_ACCOUNT_4064524> replied on the change",
+        "reason_account": {
+          "_account_id": 4064524
+        }
+      },
+      "4064524": {
+        "account": {
+          "_account_id": 4064524
+        },
+        "last_update": "2026-06-23 17:53:51.000000000",
+        "reason": "<GERRIT_ACCOUNT_4064524> replied on the change",
+        "reason_account": {
+          "_account_id": 4064524
+        }
+      }
+    },
+    "hashtags": [],
+    "change_id": "Id3dc9beac8153789e2dad81c3c50f67f72556f40",
+    "subject": "Provide PinnableContainer support on TransformingLazyColumn",
+    "status": "NEW",
+    "created": "2026-06-09 23:00:22.000000000",
+    "updated": "2026-07-01 00:35:39.000000000",
+    "submit_type": "MERGE_ALWAYS",
+    "insertions": 711,
+    "deletions": 8,
+    "total_comment_count": 30,
+    "unresolved_comment_count": 9,
+    "work_in_progress": true,
+    "has_review_started": true,
+    "_number": 4111134,
+    "virtual_id_number": 4111134,
+    "owner": {
+      "_account_id": 4064524
+    },
+    "current_revision_number": 34
+  },
+  {
+    "id": "kernel%2Fcommon~4138393",
+    "triplet_id": "kernel%2Fcommon~android16-6.12~I3061812bfd869749afb406219c9b0be9ca9ab260",
+    "project": "kernel/common",
+    "branch": "android16-6.12",
+    "full_branch": "refs/heads/android16-6.12",
+    "attention_set": {
+      "1157738": {
+        "account": {
+          "_account_id": 1157738
+        },
+        "last_update": "2026-06-24 01:25:20.000000000",
+        "reason": "<GERRIT_ACCOUNT_1934715> replied on the change",
+        "reason_account": {
+          "_account_id": 1934715
+        }
+      },
+      "1934715": {
+        "account": {
+          "_account_id": 1934715
+        },
+        "last_update": "2026-06-25 02:43:10.000000000",
+        "reason": "A robot voted negatively on a label"
+      }
+    },
+    "removed_from_attention_set": {
+      "1724998": {
+        "account": {
+          "_account_id": 1724998
+        },
+        "last_update": "2026-06-24 03:14:54.000000000",
+        "reason": "removed on reply"
+      }
+    },
+    "hashtags": [],
+    "change_id": "I3061812bfd869749afb406219c9b0be9ca9ab260",
+    "subject": "ANDROID: drivers/wrapfd: Add support for high priority I/O requests",
+    "status": "NEW",
+    "created": "2026-06-24 01:24:32.000000000",
+    "updated": "2026-07-01 00:31:44.000000000",
+    "submit_type": "REBASE_IF_NECESSARY",
+    "insertions": 65,
+    "deletions": 2,
+    "total_comment_count": 0,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4138393,
+    "virtual_id_number": 4138393,
+    "owner": {
+      "_account_id": 1934715
+    },
+    "current_revision_number": 5
+  },
+  {
+    "id": "kernel%2Fcommon~4057334",
+    "triplet_id": "kernel%2Fcommon~android16-6.12~Id41970823e104bbb756183d29ae0c2532577ff67",
+    "project": "kernel/common",
+    "branch": "android16-6.12",
+    "full_branch": "refs/heads/android16-6.12",
+    "attention_set": {
+      "1121838": {
+        "account": {
+          "_account_id": 1121838
+        },
+        "last_update": "2026-05-11 21:20:56.000000000",
+        "reason": "<GERRIT_ACCOUNT_1934715> replied on the change",
+        "reason_account": {
+          "_account_id": 1934715
+        }
+      },
+      "1157738": {
+        "account": {
+          "_account_id": 1157738
+        },
+        "last_update": "2026-05-11 21:20:56.000000000",
+        "reason": "<GERRIT_ACCOUNT_1934715> replied on the change",
+        "reason_account": {
+          "_account_id": 1934715
+        }
+      },
+      "1724998": {
+        "account": {
+          "_account_id": 1724998
+        },
+        "last_update": "2026-05-11 21:20:56.000000000",
+        "reason": "<GERRIT_ACCOUNT_1934715> replied on the change",
+        "reason_account": {
+          "_account_id": 1934715
+        }
+      },
+      "1934715": {
+        "account": {
+          "_account_id": 1934715
+        },
+        "last_update": "2026-06-23 12:18:49.000000000",
+        "reason": "<GERRIT_ACCOUNT_1014088> replied on the change",
+        "reason_account": {
+          "_account_id": 1014088
+        }
+      }
+    },
+    "removed_from_attention_set": {
+      "1014088": {
+        "account": {
+          "_account_id": 1014088
+        },
+        "last_update": "2026-06-23 12:18:49.000000000",
+        "reason": "<GERRIT_ACCOUNT_1014088> replied on the change",
+        "reason_account": {
+          "_account_id": 1014088
+        }
+      },
+      "1892347": {
+        "account": {
+          "_account_id": 1892347
+        },
+        "last_update": "2026-06-10 07:31:03.000000000",
+        "reason": "<GERRIT_ACCOUNT_1892347> replied on the change",
+        "reason_account": {
+          "_account_id": 1892347
+        }
+      }
+    },
+    "hashtags": [],
+    "change_id": "Id41970823e104bbb756183d29ae0c2532577ff67",
+    "subject": "ANDROID: drivers/wrapfd: Support unaligned file/buffer offsets",
+    "status": "NEW",
+    "created": "2026-04-30 23:44:05.000000000",
+    "updated": "2026-07-01 00:31:44.000000000",
+    "submit_type": "REBASE_IF_NECESSARY",
+    "insertions": 286,
+    "deletions": 89,
+    "total_comment_count": 5,
+    "unresolved_comment_count": 1,
+    "has_review_started": true,
+    "_number": 4057334,
+    "virtual_id_number": 4057334,
+    "owner": {
+      "_account_id": 1934715
+    },
+    "current_revision_number": 24
+  },
+  {
+    "id": "kernel%2Fcommon~4151195",
+    "triplet_id": "kernel%2Fcommon~android-mainline~Ibbed9e3820914b49aa2b59d15844f6c366c89380",
+    "project": "kernel/common",
+    "branch": "android-mainline",
+    "full_branch": "refs/heads/android-mainline",
+    "attention_set": {},
+    "removed_from_attention_set": {
+      "1869395": {
+        "account": {
+          "_account_id": 1869395
+        },
+        "last_update": "2026-06-30 16:39:21.000000000",
+        "reason": "<GERRIT_ACCOUNT_1869395> replied on the change",
+        "reason_account": {
+          "_account_id": 1869395
+        }
+      }
+    },
+    "hashtags": [],
+    "change_id": "Ibbed9e3820914b49aa2b59d15844f6c366c89380",
+    "subject": "Merge ec5d1ae94e99 (\"Merge tag 'vfs-7.2-rc1.iomap' of git://git.kernel.org/pub/scm/linux/kernel/git/vfs/vfs\") into android-mainline",
+    "status": "NEW",
+    "created": "2026-06-30 14:24:56.000000000",
+    "updated": "2026-07-01 00:24:48.000000000",
+    "submit_type": "REBASE_IF_NECESSARY",
+    "insertions": 0,
+    "deletions": 0,
+    "total_comment_count": 0,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4151195,
+    "virtual_id_number": 4151195,
+    "owner": {
+      "_account_id": 1869395
+    },
+    "current_revision_number": 1
+  },
+  {
+    "id": "platform%2Fframeworks%2Fsupport~4148275",
+    "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~Ice5d456a17f362d03a66926045208eb8241f0bc4",
+    "project": "platform/frameworks/support",
+    "branch": "androidx-main",
+    "full_branch": "refs/heads/androidx-main",
+    "attention_set": {
+      "1868360": {
+        "account": {
+          "_account_id": 1868360
+        },
+        "last_update": "2026-06-29 06:38:14.000000000",
+        "reason": "<GERRIT_ACCOUNT_3647308> replied on the change",
+        "reason_account": {
+          "_account_id": 3647308
+        }
+      },
+      "3576173": {
+        "account": {
+          "_account_id": 3576173
+        },
+        "last_update": "2026-06-30 11:24:23.000000000",
+        "reason": "Vote got outdated and was removed: Code-Review+2"
+      },
+      "3647308": {
+        "account": {
+          "_account_id": 3647308
+        },
+        "last_update": "2026-07-01 00:23:00.000000000",
+        "reason": "<GERRIT_ACCOUNT_1381453> replied on the change",
+        "reason_account": {
+          "_account_id": 1381453
+        }
+      },
+      "3653873": {
+        "account": {
+          "_account_id": 3653873
+        },
+        "last_update": "2026-06-29 06:38:14.000000000",
+        "reason": "<GERRIT_ACCOUNT_3647308> replied on the change",
+        "reason_account": {
+          "_account_id": 3647308
+        }
+      }
+    },
+    "removed_from_attention_set": {
+      "1381453": {
+        "account": {
+          "_account_id": 1381453
+        },
+        "last_update": "2026-07-01 00:23:00.000000000",
+        "reason": "<GERRIT_ACCOUNT_1381453> replied on the change",
+        "reason_account": {
+          "_account_id": 1381453
+        }
+      }
+    },
+    "hashtags": [],
+    "change_id": "Ice5d456a17f362d03a66926045208eb8241f0bc4",
+    "subject": "Fix OcrProvider resource leaks and optimize initialization",
+    "status": "NEW",
+    "created": "2026-06-29 06:37:33.000000000",
+    "updated": "2026-07-01 00:23:00.000000000",
+    "submit_type": "MERGE_ALWAYS",
+    "insertions": 71,
+    "deletions": 10,
+    "total_comment_count": 3,
+    "unresolved_comment_count": 1,
+    "has_review_started": true,
+    "_number": 4148275,
+    "virtual_id_number": 4148275,
+    "owner": {
+      "_account_id": 3647308
+    },
+    "current_revision_number": 4
+  },
+  {
+    "id": "kernel%2Fcommon~4151015",
+    "triplet_id": "kernel%2Fcommon~android17-6.18~Id7b64e11b6034a8592d0c75f7accdb56c7ef6c20",
+    "project": "kernel/common",
+    "branch": "android17-6.18",
+    "full_branch": "refs/heads/android17-6.18",
+    "attention_set": {
+      "1572468": {
+        "account": {
+          "_account_id": 1572468
+        },
+        "last_update": "2026-07-01 00:18:37.000000000",
+        "reason": "<GERRIT_ACCOUNT_1961338> replied on the change",
+        "reason_account": {
+          "_account_id": 1961338
+        }
+      },
+      "1870730": {
+        "account": {
+          "_account_id": 1870730
+        },
+        "last_update": "2026-07-01 00:18:37.000000000",
+        "reason": "<GERRIT_ACCOUNT_1961338> replied on the change",
+        "reason_account": {
+          "_account_id": 1961338
+        }
+      },
+      "1945845": {
+        "account": {
+          "_account_id": 1945845
+        },
+        "last_update": "2026-07-01 00:18:37.000000000",
+        "reason": "<GERRIT_ACCOUNT_1961338> replied on the change",
+        "reason_account": {
+          "_account_id": 1961338
+        }
+      },
+      "1967272": {
+        "account": {
+          "_account_id": 1967272
+        },
+        "last_update": "2026-07-01 00:18:37.000000000",
+        "reason": "<GERRIT_ACCOUNT_1961338> replied on the change",
+        "reason_account": {
+          "_account_id": 1961338
+        }
+      }
+    },
+    "removed_from_attention_set": {},
+    "hashtags": [],
+    "change_id": "Id7b64e11b6034a8592d0c75f7accdb56c7ef6c20",
+    "subject": "ANDROID: update symbol for unisoc whitelist",
+    "status": "NEW",
+    "created": "2026-06-30 12:27:44.000000000",
+    "updated": "2026-07-01 00:18:37.000000000",
+    "submit_type": "REBASE_IF_NECESSARY",
+    "insertions": 28,
+    "deletions": 0,
+    "total_comment_count": 0,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4151015,
+    "virtual_id_number": 4151015,
+    "owner": {
+      "_account_id": 1967272
+    },
+    "current_revision_number": 1
+  },
+  {
+    "id": "kernel%2Fcommon~4150155",
+    "triplet_id": "kernel%2Fcommon~android-mainline~I348e8532c6c5c180232f844d525fc90a882a2657",
+    "project": "kernel/common",
+    "branch": "android-mainline",
+    "full_branch": "refs/heads/android-mainline",
+    "hashtags": [],
+    "change_id": "I348e8532c6c5c180232f844d525fc90a882a2657",
+    "subject": "ANDROID: common-android-mainline canary test.",
+    "status": "NEW",
+    "created": "2026-06-30 02:09:36.000000000",
+    "updated": "2026-07-01 00:17:02.000000000",
+    "submit_type": "REBASE_IF_NECESSARY",
+    "insertions": 53,
+    "deletions": 0,
+    "total_comment_count": 0,
+    "unresolved_comment_count": 0,
+    "has_review_started": true,
+    "_number": 4150155,
+    "virtual_id_number": 4150155,
+    "owner": {
+      "_account_id": 4589206
+    },
+    "current_revision_number": 2
   },
   {
     "id": "platform%2Fframeworks%2Fsupport~4130316",
@@ -246,31 +1205,6 @@
       "_account_id": 1999911
     },
     "current_revision_number": 2
-  },
-  {
-    "id": "platform%2Fframeworks%2Fsupport~4152142",
-    "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~If41fc80daab2465bcb6002043eb63969bdc97917",
-    "project": "platform/frameworks/support",
-    "branch": "androidx-main",
-    "full_branch": "refs/heads/androidx-main",
-    "hashtags": [],
-    "change_id": "If41fc80daab2465bcb6002043eb63969bdc97917",
-    "subject": "[Styles API] Fix clip shape animation",
-    "status": "NEW",
-    "created": "2026-06-30 23:44:41.000000000",
-    "updated": "2026-07-01 00:03:39.000000000",
-    "submit_type": "MERGE_ALWAYS",
-    "insertions": 27,
-    "deletions": 2,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4152142,
-    "virtual_id_number": 4152142,
-    "owner": {
-      "_account_id": 1048725
-    },
-    "current_revision_number": 1
   },
   {
     "id": "platform%2Fframeworks%2Fsupport~4149737",
@@ -674,162 +1608,6 @@
     "current_revision_number": 8
   },
   {
-    "id": "platform%2Fframeworks%2Fsupport~4152178",
-    "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~I133d66926e101ec9eea12dbe2984693997dbaafe",
-    "project": "platform/frameworks/support",
-    "branch": "androidx-main",
-    "full_branch": "refs/heads/androidx-main",
-    "attention_set": {
-      "3731219": {
-        "account": {
-          "_account_id": 3731219
-        },
-        "last_update": "2026-06-30 23:44:03.000000000",
-        "reason": "<GERRIT_ACCOUNT_3619124> replied on the change",
-        "reason_account": {
-          "_account_id": 3619124
-        }
-      },
-      "4052684": {
-        "account": {
-          "_account_id": 4052684
-        },
-        "last_update": "2026-06-30 23:44:03.000000000",
-        "reason": "<GERRIT_ACCOUNT_3619124> replied on the change",
-        "reason_account": {
-          "_account_id": 3619124
-        }
-      }
-    },
-    "removed_from_attention_set": {},
-    "hashtags": [],
-    "change_id": "I133d66926e101ec9eea12dbe2984693997dbaafe",
-    "subject": "Restrict ExponentialDecay API to LIBRARY scope",
-    "status": "NEW",
-    "created": "2026-06-30 23:42:39.000000000",
-    "updated": "2026-06-30 23:48:28.000000000",
-    "submit_type": "MERGE_ALWAYS",
-    "insertions": 1,
-    "deletions": 1,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4152178,
-    "virtual_id_number": 4152178,
-    "owner": {
-      "_account_id": 3619124
-    },
-    "current_revision_number": 1
-  },
-  {
-    "id": "platform%2Fframeworks%2Fsupport~4111134",
-    "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~Id3dc9beac8153789e2dad81c3c50f67f72556f40",
-    "project": "platform/frameworks/support",
-    "branch": "androidx-main",
-    "full_branch": "refs/heads/androidx-main",
-    "attention_set": {},
-    "removed_from_attention_set": {
-      "1010101": {
-        "account": {
-          "_account_id": 1010101
-        },
-        "last_update": "2026-06-16 16:35:49.000000000",
-        "reason": "Reviewer/Cc was removed"
-      },
-      "1014545": {
-        "account": {
-          "_account_id": 1014545
-        },
-        "last_update": "2026-06-17 15:54:49.000000000",
-        "reason": "Reviewer/Cc was removed"
-      },
-      "1060473": {
-        "account": {
-          "_account_id": 1060473
-        },
-        "last_update": "2026-06-17 15:54:52.000000000",
-        "reason": "Reviewer/Cc was removed"
-      },
-      "1841368": {
-        "account": {
-          "_account_id": 1841368
-        },
-        "last_update": "2026-06-17 15:54:54.000000000",
-        "reason": "Reviewer/Cc was removed"
-      },
-      "1868325": {
-        "account": {
-          "_account_id": 1868325
-        },
-        "last_update": "2026-06-10 09:41:18.000000000",
-        "reason": "<GERRIT_ACCOUNT_1868325> replied on the change",
-        "reason_account": {
-          "_account_id": 1868325
-        }
-      },
-      "1943535": {
-        "account": {
-          "_account_id": 1943535
-        },
-        "last_update": "2026-06-17 15:55:12.000000000",
-        "reason": "Reviewer/Cc was removed"
-      },
-      "1953920": {
-        "account": {
-          "_account_id": 1953920
-        },
-        "last_update": "2026-06-17 15:54:57.000000000",
-        "reason": "Reviewer/Cc was removed"
-      },
-      "1970490": {
-        "account": {
-          "_account_id": 1970490
-        },
-        "last_update": "2026-06-17 15:55:01.000000000",
-        "reason": "Reviewer/Cc was removed"
-      },
-      "3425888": {
-        "account": {
-          "_account_id": 3425888
-        },
-        "last_update": "2026-06-23 17:53:51.000000000",
-        "reason": "<GERRIT_ACCOUNT_4064524> replied on the change",
-        "reason_account": {
-          "_account_id": 4064524
-        }
-      },
-      "4064524": {
-        "account": {
-          "_account_id": 4064524
-        },
-        "last_update": "2026-06-23 17:53:51.000000000",
-        "reason": "<GERRIT_ACCOUNT_4064524> replied on the change",
-        "reason_account": {
-          "_account_id": 4064524
-        }
-      }
-    },
-    "hashtags": [],
-    "change_id": "Id3dc9beac8153789e2dad81c3c50f67f72556f40",
-    "subject": "Provide PinnableContainer support on TransformingLazyColumn",
-    "status": "NEW",
-    "created": "2026-06-09 23:00:22.000000000",
-    "updated": "2026-06-30 23:47:09.000000000",
-    "submit_type": "MERGE_ALWAYS",
-    "insertions": 704,
-    "deletions": 8,
-    "total_comment_count": 30,
-    "unresolved_comment_count": 9,
-    "work_in_progress": true,
-    "has_review_started": true,
-    "_number": 4111134,
-    "virtual_id_number": 4111134,
-    "owner": {
-      "_account_id": 4064524
-    },
-    "current_revision_number": 32
-  },
-  {
     "id": "platform%2Fbootable%2Flibbootloader~4149076",
     "triplet_id": "platform%2Fbootable%2Flibbootloader~gbl-mainline~If4fcc8b5d5d16492d1cb072894abf8643e6c144c",
     "project": "platform/bootable/libbootloader",
@@ -870,69 +1648,6 @@
       "_account_id": 1893074
     },
     "current_revision_number": 3
-  },
-  {
-    "id": "kernel%2Fcommon~4151275",
-    "triplet_id": "kernel%2Fcommon~android-mainline~I1dedcb26938def8d8de381c73aa6feb56b35c5be",
-    "project": "kernel/common",
-    "branch": "android-mainline",
-    "full_branch": "refs/heads/android-mainline",
-    "topic": "v7.2-xattr",
-    "attention_set": {
-      "1869395": {
-        "account": {
-          "_account_id": 1869395
-        },
-        "last_update": "2026-06-30 16:52:46.000000000",
-        "reason": "A robot voted negatively on a label"
-      }
-    },
-    "removed_from_attention_set": {},
-    "hashtags": [],
-    "change_id": "I1dedcb26938def8d8de381c73aa6feb56b35c5be",
-    "subject": "Merge ff8747aacaff (\"Merge tag 'vfs-7.2-rc1.xattr' of git://git.kernel.org/pub/scm/linux/kernel/git/vfs/vfs\") into android-mainline",
-    "status": "NEW",
-    "created": "2026-06-30 14:53:39.000000000",
-    "updated": "2026-06-30 23:37:17.000000000",
-    "submit_type": "REBASE_IF_NECESSARY",
-    "insertions": 0,
-    "deletions": 0,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4151275,
-    "virtual_id_number": 4151275,
-    "owner": {
-      "_account_id": 1869395
-    },
-    "current_revision_number": 1
-  },
-  {
-    "id": "kernel%2Fcommon~4151715",
-    "triplet_id": "kernel%2Fcommon~android-mainline~I2f41e047fd77fc3a5b1c223caee4fc2bcfdf02cd",
-    "project": "kernel/common",
-    "branch": "android-mainline",
-    "full_branch": "refs/heads/android-mainline",
-    "topic": "v7.2-xattr",
-    "hashtags": [],
-    "change_id": "I2f41e047fd77fc3a5b1c223caee4fc2bcfdf02cd",
-    "subject": "ANDROID: selinux: don't mark the inode as initialized",
-    "status": "NEW",
-    "created": "2026-06-30 20:02:04.000000000",
-    "updated": "2026-06-30 23:37:11.000000000",
-    "submit_type": "REBASE_IF_NECESSARY",
-    "insertions": 4,
-    "deletions": 4,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "work_in_progress": true,
-    "has_review_started": false,
-    "_number": 4151715,
-    "virtual_id_number": 4151715,
-    "owner": {
-      "_account_id": 1869395
-    },
-    "current_revision_number": 1
   },
   {
     "id": "kernel%2Fcommon~4151835",
@@ -1255,44 +1970,6 @@
     "current_revision_number": 2
   },
   {
-    "id": "platform%2Fexternal%2Fu-boot~4151078",
-    "triplet_id": "platform%2Fexternal%2Fu-boot~u-boot-mainline~I9896ec229b3a395e4b4fb96c3399805bd3976c82",
-    "project": "platform/external/u-boot",
-    "branch": "u-boot-mainline",
-    "full_branch": "refs/heads/u-boot-mainline",
-    "attention_set": {
-      "1466604": {
-        "account": {
-          "_account_id": 1466604
-        },
-        "last_update": "2026-06-30 23:17:13.000000000",
-        "reason": "<GERRIT_ACCOUNT_1893074> replied on the change",
-        "reason_account": {
-          "_account_id": 1893074
-        }
-      }
-    },
-    "removed_from_attention_set": {},
-    "hashtags": [],
-    "change_id": "I9896ec229b3a395e4b4fb96c3399805bd3976c82",
-    "subject": "dt_fixup: re-encode /reserved-memory to the firmware cell width",
-    "status": "NEW",
-    "created": "2026-06-30 23:15:05.000000000",
-    "updated": "2026-06-30 23:17:46.000000000",
-    "submit_type": "MERGE_IF_NECESSARY",
-    "insertions": 173,
-    "deletions": 2,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4151078,
-    "virtual_id_number": 4151078,
-    "owner": {
-      "_account_id": 1893074
-    },
-    "current_revision_number": 1
-  },
-  {
     "id": "platform%2Fframeworks%2Fsupport~4138254",
     "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~Ifbd41e57a39587500eef32ba8e05ca4110e0257b",
     "project": "platform/frameworks/support",
@@ -1364,44 +2041,6 @@
       "_account_id": 1989924
     },
     "current_revision_number": 13
-  },
-  {
-    "id": "kernel%2Fcommon~4151195",
-    "triplet_id": "kernel%2Fcommon~android-mainline~Ibbed9e3820914b49aa2b59d15844f6c366c89380",
-    "project": "kernel/common",
-    "branch": "android-mainline",
-    "full_branch": "refs/heads/android-mainline",
-    "attention_set": {},
-    "removed_from_attention_set": {
-      "1869395": {
-        "account": {
-          "_account_id": 1869395
-        },
-        "last_update": "2026-06-30 16:39:21.000000000",
-        "reason": "<GERRIT_ACCOUNT_1869395> replied on the change",
-        "reason_account": {
-          "_account_id": 1869395
-        }
-      }
-    },
-    "hashtags": [],
-    "change_id": "Ibbed9e3820914b49aa2b59d15844f6c366c89380",
-    "subject": "Merge ec5d1ae94e99 (\"Merge tag 'vfs-7.2-rc1.iomap' of git://git.kernel.org/pub/scm/linux/kernel/git/vfs/vfs\") into android-mainline",
-    "status": "NEW",
-    "created": "2026-06-30 14:24:56.000000000",
-    "updated": "2026-06-30 23:14:14.000000000",
-    "submit_type": "REBASE_IF_NECESSARY",
-    "insertions": 0,
-    "deletions": 0,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4151195,
-    "virtual_id_number": 4151195,
-    "owner": {
-      "_account_id": 1869395
-    },
-    "current_revision_number": 1
   },
   {
     "id": "platform%2Fframeworks%2Fsupport~4151736",
@@ -1676,45 +2315,6 @@
       "_account_id": 1961395
     },
     "current_revision_number": 3
-  },
-  {
-    "id": "kernel%2Fcommon~4151756",
-    "triplet_id": "kernel%2Fcommon~android17-6.18~I45d01a0691b5cbd0f3dacd77a286c12a260d9568",
-    "project": "kernel/common",
-    "branch": "android17-6.18",
-    "full_branch": "refs/heads/android17-6.18",
-    "topic": "cherrypicker-selfservice-L95900030140996897:N16100030907948546",
-    "attention_set": {
-      "1954115": {
-        "account": {
-          "_account_id": 1954115
-        },
-        "last_update": "2026-06-30 20:37:37.000000000",
-        "reason": "<GERRIT_ACCOUNT_1827146> replied on the change",
-        "reason_account": {
-          "_account_id": 1827146
-        }
-      }
-    },
-    "removed_from_attention_set": {},
-    "hashtags": [],
-    "change_id": "I45d01a0691b5cbd0f3dacd77a286c12a260d9568",
-    "subject": "ANDROID: dm-bow: Fix Use-After-free in dm_bow_dtr()",
-    "status": "NEW",
-    "created": "2026-06-30 20:35:03.000000000",
-    "updated": "2026-06-30 22:51:05.000000000",
-    "submit_type": "REBASE_IF_NECESSARY",
-    "insertions": 5,
-    "deletions": 5,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4151756,
-    "virtual_id_number": 4151756,
-    "owner": {
-      "_account_id": 1891811
-    },
-    "current_revision_number": 1
   },
   {
     "id": "platform%2Fexternal%2Ficing~4151796",
@@ -2235,31 +2835,6 @@
       "_account_id": 1086749
     },
     "current_revision_number": 8
-  },
-  {
-    "id": "kernel%2Fcommon~4150155",
-    "triplet_id": "kernel%2Fcommon~android-mainline~I348e8532c6c5c180232f844d525fc90a882a2657",
-    "project": "kernel/common",
-    "branch": "android-mainline",
-    "full_branch": "refs/heads/android-mainline",
-    "hashtags": [],
-    "change_id": "I348e8532c6c5c180232f844d525fc90a882a2657",
-    "subject": "ANDROID: common-android-mainline canary test.",
-    "status": "NEW",
-    "created": "2026-06-30 02:09:36.000000000",
-    "updated": "2026-06-30 22:17:12.000000000",
-    "submit_type": "REBASE_IF_NECESSARY",
-    "insertions": 53,
-    "deletions": 0,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4150155,
-    "virtual_id_number": 4150155,
-    "owner": {
-      "_account_id": 4589206
-    },
-    "current_revision_number": 2
   },
   {
     "id": "platform%2Fframeworks%2Fsupport~3936572",
@@ -9210,66 +9785,6 @@
     "current_revision_number": 1
   },
   {
-    "id": "platform%2Fframeworks%2Fsupport~4110996",
-    "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~Ie254d282136420e942312e8333de399db2ee3374",
-    "project": "platform/frameworks/support",
-    "branch": "androidx-main",
-    "full_branch": "refs/heads/androidx-main",
-    "topic": "material3-theme-startup-benchmark",
-    "attention_set": {
-      "1343300": {
-        "account": {
-          "_account_id": 1343300
-        },
-        "last_update": "2026-06-10 14:00:31.000000000",
-        "reason": "<GERRIT_ACCOUNT_1517580> replied on the change",
-        "reason_account": {
-          "_account_id": 1517580
-        }
-      },
-      "1517580": {
-        "account": {
-          "_account_id": 1517580
-        },
-        "last_update": "2026-06-26 19:01:50.000000000",
-        "reason": "A robot voted negatively on a label"
-      },
-      "1854045": {
-        "account": {
-          "_account_id": 1854045
-        },
-        "last_update": "2026-06-26 16:28:39.000000000",
-        "reason": "Vote got outdated and was removed: Code-Review+1"
-      },
-      "1949540": {
-        "account": {
-          "_account_id": 1949540
-        },
-        "last_update": "2026-06-30 14:52:47.000000000",
-        "reason": "Vote got outdated and was removed: Code-Review+1"
-      }
-    },
-    "removed_from_attention_set": {},
-    "hashtags": [],
-    "change_id": "Ie254d282136420e942312e8333de399db2ee3374",
-    "subject": "Add startup macrobenchmarks and microbenchmarks for MaterialTheme",
-    "status": "NEW",
-    "created": "2026-06-09 18:22:18.000000000",
-    "updated": "2026-06-30 14:53:40.000000000",
-    "submit_type": "MERGE_ALWAYS",
-    "insertions": 312,
-    "deletions": 0,
-    "total_comment_count": 10,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4110996,
-    "virtual_id_number": 4110996,
-    "owner": {
-      "_account_id": 1517580
-    },
-    "current_revision_number": 9
-  },
-  {
     "id": "platform%2Fframeworks%2Fsupport~4108212",
     "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~I858557f11ab08313701b24d3eb36ad4e82aa9d6d",
     "project": "platform/frameworks/support",
@@ -10579,82 +11094,6 @@
     "current_revision_number": 2
   },
   {
-    "id": "platform%2Fframeworks%2Fsupport~4148275",
-    "triplet_id": "platform%2Fframeworks%2Fsupport~androidx-main~Ice5d456a17f362d03a66926045208eb8241f0bc4",
-    "project": "platform/frameworks/support",
-    "branch": "androidx-main",
-    "full_branch": "refs/heads/androidx-main",
-    "attention_set": {
-      "1381453": {
-        "account": {
-          "_account_id": 1381453
-        },
-        "last_update": "2026-06-30 12:45:01.000000000",
-        "reason": "<GERRIT_ACCOUNT_3647308> replied on the change",
-        "reason_account": {
-          "_account_id": 3647308
-        }
-      },
-      "1868360": {
-        "account": {
-          "_account_id": 1868360
-        },
-        "last_update": "2026-06-29 06:38:14.000000000",
-        "reason": "<GERRIT_ACCOUNT_3647308> replied on the change",
-        "reason_account": {
-          "_account_id": 3647308
-        }
-      },
-      "3576173": {
-        "account": {
-          "_account_id": 3576173
-        },
-        "last_update": "2026-06-30 11:24:23.000000000",
-        "reason": "Vote got outdated and was removed: Code-Review+2"
-      },
-      "3653873": {
-        "account": {
-          "_account_id": 3653873
-        },
-        "last_update": "2026-06-29 06:38:14.000000000",
-        "reason": "<GERRIT_ACCOUNT_3647308> replied on the change",
-        "reason_account": {
-          "_account_id": 3647308
-        }
-      }
-    },
-    "removed_from_attention_set": {
-      "3647308": {
-        "account": {
-          "_account_id": 3647308
-        },
-        "last_update": "2026-06-30 12:45:01.000000000",
-        "reason": "<GERRIT_ACCOUNT_3647308> replied on the change",
-        "reason_account": {
-          "_account_id": 3647308
-        }
-      }
-    },
-    "hashtags": [],
-    "change_id": "Ice5d456a17f362d03a66926045208eb8241f0bc4",
-    "subject": "Fix OcrProvider resource leaks and optimize initialization",
-    "status": "NEW",
-    "created": "2026-06-29 06:37:33.000000000",
-    "updated": "2026-06-30 12:45:01.000000000",
-    "submit_type": "MERGE_ALWAYS",
-    "insertions": 71,
-    "deletions": 10,
-    "total_comment_count": 2,
-    "unresolved_comment_count": 1,
-    "has_review_started": true,
-    "_number": 4148275,
-    "virtual_id_number": 4148275,
-    "owner": {
-      "_account_id": 3647308
-    },
-    "current_revision_number": 4
-  },
-  {
     "id": "kernel%2Fcommon~4151035",
     "triplet_id": "kernel%2Fcommon~android17-6.18~I4bc751071bd8f24227140f71dfb6e28560a22ac0",
     "project": "kernel/common",
@@ -10727,31 +11166,6 @@
       "_account_id": 1475857
     },
     "current_revision_number": 8
-  },
-  {
-    "id": "kernel%2Fcommon~4151015",
-    "triplet_id": "kernel%2Fcommon~android17-6.18~Id7b64e11b6034a8592d0c75f7accdb56c7ef6c20",
-    "project": "kernel/common",
-    "branch": "android17-6.18",
-    "full_branch": "refs/heads/android17-6.18",
-    "hashtags": [],
-    "change_id": "Id7b64e11b6034a8592d0c75f7accdb56c7ef6c20",
-    "subject": "ANDROID: update symbol for unisoc whitelist",
-    "status": "NEW",
-    "created": "2026-06-30 12:27:44.000000000",
-    "updated": "2026-06-30 12:27:44.000000000",
-    "submit_type": "REBASE_IF_NECESSARY",
-    "insertions": 28,
-    "deletions": 0,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4151015,
-    "virtual_id_number": 4151015,
-    "owner": {
-      "_account_id": 1967272
-    },
-    "current_revision_number": 1
   },
   {
     "id": "platform%2Fcts~4129914",
@@ -14996,162 +15410,6 @@
       "_account_id": 4203492
     },
     "current_revision_number": 3
-  },
-  {
-    "id": "kernel%2Fcommon~4143433",
-    "triplet_id": "kernel%2Fcommon~android15-6.6~I9589164a216afc3f13ce41226bcfc5f8295120f3",
-    "project": "kernel/common",
-    "branch": "android15-6.6",
-    "full_branch": "refs/heads/android15-6.6",
-    "attention_set": {
-      "1069543": {
-        "account": {
-          "_account_id": 1069543
-        },
-        "last_update": "2026-06-25 11:31:05.000000000",
-        "reason": "<GERRIT_ACCOUNT_4118957> replied on the change",
-        "reason_account": {
-          "_account_id": 4118957
-        }
-      },
-      "1157738": {
-        "account": {
-          "_account_id": 1157738
-        },
-        "last_update": "2026-06-26 08:47:48.000000000",
-        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
-        "reason_account": {
-          "_account_id": 4821391
-        }
-      },
-      "1293738": {
-        "account": {
-          "_account_id": 1293738
-        },
-        "last_update": "2026-06-26 08:47:48.000000000",
-        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
-        "reason_account": {
-          "_account_id": 4821391
-        }
-      },
-      "1402878": {
-        "account": {
-          "_account_id": 1402878
-        },
-        "last_update": "2026-06-26 08:47:48.000000000",
-        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
-        "reason_account": {
-          "_account_id": 4821391
-        }
-      },
-      "1557540": {
-        "account": {
-          "_account_id": 1557540
-        },
-        "last_update": "2026-06-26 08:47:48.000000000",
-        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
-        "reason_account": {
-          "_account_id": 4821391
-        }
-      },
-      "1572468": {
-        "account": {
-          "_account_id": 1572468
-        },
-        "last_update": "2026-06-26 08:47:48.000000000",
-        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
-        "reason_account": {
-          "_account_id": 4821391
-        }
-      },
-      "1625880": {
-        "account": {
-          "_account_id": 1625880
-        },
-        "last_update": "2026-06-26 08:47:48.000000000",
-        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
-        "reason_account": {
-          "_account_id": 4821391
-        }
-      },
-      "1869395": {
-        "account": {
-          "_account_id": 1869395
-        },
-        "last_update": "2026-06-26 08:47:48.000000000",
-        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
-        "reason_account": {
-          "_account_id": 4821391
-        }
-      },
-      "1870730": {
-        "account": {
-          "_account_id": 1870730
-        },
-        "last_update": "2026-06-26 08:47:48.000000000",
-        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
-        "reason_account": {
-          "_account_id": 4821391
-        }
-      },
-      "1934715": {
-        "account": {
-          "_account_id": 1934715
-        },
-        "last_update": "2026-06-26 08:47:48.000000000",
-        "reason": "<GERRIT_ACCOUNT_4821391> replied on the change",
-        "reason_account": {
-          "_account_id": 4821391
-        }
-      },
-      "4118957": {
-        "account": {
-          "_account_id": 4118957
-        },
-        "last_update": "2026-06-29 23:29:46.000000000",
-        "reason": "A robot voted negatively on a label"
-      }
-    },
-    "removed_from_attention_set": {
-      "1945845": {
-        "account": {
-          "_account_id": 1945845
-        },
-        "last_update": "2026-06-29 23:14:10.000000000",
-        "reason": "<GERRIT_ACCOUNT_1945845> replied on the change",
-        "reason_account": {
-          "_account_id": 1945845
-        }
-      },
-      "3406862": {
-        "account": {
-          "_account_id": 3406862
-        },
-        "last_update": "2026-06-29 12:13:46.000000000",
-        "reason": "<GERRIT_ACCOUNT_3406862> replied on the change",
-        "reason_account": {
-          "_account_id": 3406862
-        }
-      }
-    },
-    "hashtags": [],
-    "change_id": "I9589164a216afc3f13ce41226bcfc5f8295120f3",
-    "subject": "ANDROID: vendor hooks: add hooks to support the functionality and management of multiple swap devices.",
-    "status": "NEW",
-    "created": "2026-06-25 08:28:18.000000000",
-    "updated": "2026-06-30 05:12:46.000000000",
-    "submit_type": "REBASE_IF_NECESSARY",
-    "insertions": 37,
-    "deletions": 0,
-    "total_comment_count": 5,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4143433,
-    "virtual_id_number": 4143433,
-    "owner": {
-      "_account_id": 4118957
-    },
-    "current_revision_number": 4
   },
   {
     "id": "kernel%2Fcommon~4150160",
@@ -22584,56 +22842,6 @@
     "has_review_started": true,
     "_number": 4141188,
     "virtual_id_number": 4141188,
-    "owner": {
-      "_account_id": 1898956
-    },
-    "current_revision_number": 2
-  },
-  {
-    "id": "kernel%2Fcommon~4141176",
-    "triplet_id": "kernel%2Fcommon~android16-6.12~I0eea0241745604385bef8132fe8c0b1fa076250a",
-    "project": "kernel/common",
-    "branch": "android16-6.12",
-    "full_branch": "refs/heads/android16-6.12",
-    "hashtags": [],
-    "change_id": "I0eea0241745604385bef8132fe8c0b1fa076250a",
-    "subject": "ANDROID: KVM: arm64: Fix ITT address extraction in GITS_MAPD emulation",
-    "status": "NEW",
-    "created": "2026-06-24 17:11:01.000000000",
-    "updated": "2026-06-29 09:52:41.000000000",
-    "submit_type": "REBASE_IF_NECESSARY",
-    "insertions": 1,
-    "deletions": 0,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4141176,
-    "virtual_id_number": 4141176,
-    "owner": {
-      "_account_id": 1898956
-    },
-    "current_revision_number": 2
-  },
-  {
-    "id": "kernel%2Fcommon~4141174",
-    "triplet_id": "kernel%2Fcommon~android16-6.12~I952bc51817099f95ef41fbc300cfcd778594bdf6",
-    "project": "kernel/common",
-    "branch": "android16-6.12",
-    "full_branch": "refs/heads/android16-6.12",
-    "hashtags": [],
-    "change_id": "I952bc51817099f95ef41fbc300cfcd778594bdf6",
-    "subject": "ANDROID: KVM: arm64: irqchip/gic-v3-its: Fix compilation errors",
-    "status": "NEW",
-    "created": "2026-06-24 17:11:01.000000000",
-    "updated": "2026-06-29 09:52:41.000000000",
-    "submit_type": "REBASE_IF_NECESSARY",
-    "insertions": 4,
-    "deletions": 4,
-    "total_comment_count": 0,
-    "unresolved_comment_count": 0,
-    "has_review_started": true,
-    "_number": 4141174,
-    "virtual_id_number": 4141174,
     "owner": {
       "_account_id": 1898956
     },
