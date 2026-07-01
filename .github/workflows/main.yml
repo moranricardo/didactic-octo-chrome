@@ -26,13 +26,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
 
-      - name: Instalación Ligera
+      - name: Instalación
         run: npm install --prefer-offline
 
       - name: 📡 Ejecutar Motor de Red Ra Pulse
-        run: node src/index.cjs
+        run: node src/index.js
 
       - name: 💾 Persistir Estado
         run: |
@@ -45,4 +45,3 @@ jobs:
           else
             echo "No hay cambios en state.json, omitiendo commit."
           fi
-
