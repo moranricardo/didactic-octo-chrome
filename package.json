@@ -2,7 +2,8 @@
   "name": "didactic-octo-chrome",
   "version": "1.0.0",
   "type": "commonjs",
-  "main": "index.cjs",
+  "main": "src/index.cjs",
+  "type": "module",
   "scripts": {
     "start": "node index.cjs"
   },
