@@ -5,6 +5,10 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
+# Conceder permisos de escritura para que el bot pueda hacer push a state.json
+permissions:
+  contents: write
+
 jobs:
   run-pulse:
     runs-on: ubuntu-latest
