@@ -1,10 +1,8 @@
 name: Ra Pulse - Gerrit & Telemetry Automation
 
 on:
-  # Se ejecuta automáticamente cada hora
   schedule:
     - cron: '0 * * * *'
-  # Permite la ejecución manual desde la interfaz de GitHub
   workflow_dispatch:
 
 jobs:
@@ -21,14 +19,13 @@ jobs:
         node-version: '20'
 
     - name: 🤖 Ejecutar Interrogación y Telemetría
-      run: node gerrit-client.js
+      run: node gerrit-client.cjs
 
     - name: 📝 Confirmar cambios en state.json
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         
-        # Verificar si state.json cambió antes de hacer commit
         if [ -n "$(git status --porcelain state.json)" ]; then
           git add state.json
           git commit -m "❤️ Telemetry-Heart: Actualización automática de estado [Auto]"

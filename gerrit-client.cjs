@@ -1,5 +1,5 @@
 const https = require('https');
-const { updateSystemState } = require('./telemetry');
+const { updateSystemState } = require('./telemetry.cjs');
 
 const GERRIT_URL = 'https://android-review.googlesource.com/changes/?q=status:open&n=5';
 
@@ -10,7 +10,6 @@ https.get(GERRIT_URL, (res) => {
 
     res.on('data', (chunk) => { rawData += chunk; });
 
-    // Hacemos que el callback sea async para poder usar await adentro
     res.on('end', async () => {
         try {
             const xssiPrefix = ")]}'\n";
@@ -28,7 +27,6 @@ https.get(GERRIT_URL, (res) => {
                 console.log(`   [${c.change_id.substring(0, 8)}] ${c.subject.substring(0, 60)}...`);
             });
 
-            // Esperamos a que la telemetría guarde el archivo antes de cerrar el proceso
             await updateSystemState('SUCCESS', { changesCount: changes.length });
 
         } catch (error) {
