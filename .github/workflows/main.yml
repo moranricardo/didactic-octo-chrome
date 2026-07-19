@@ -28,8 +28,21 @@ jobs:
         with:
           node-version: 24
 
-      - name: Instalación
-        run: npm install --prefer-offline
+      - name: Verificar Estructura y Dependencias
+        run: |
+          node -v
+          npm -v
+          ls -la
+          ls -la src/ || true
+
+      - name: Instalación Segura
+        run: |
+          if [ -f package.json ]; then
+            npm install || npm install --legacy-peer-deps
+          else
+            npm init -y
+            npm pkg set type="module"
+          fi
 
       - name: 📡 Ejecutar Motor de Red Ra Pulse
         run: node src/index.js
