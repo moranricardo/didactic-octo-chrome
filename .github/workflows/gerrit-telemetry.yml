@@ -1,0 +1,42 @@
+name: Ra Pulse - Gerrit & Telemetry Automation
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-pulse:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Clonar el repositorio
+      uses: actions/checkout@v4
+
+    - name: 🟢 Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: 📦 Instalar dependencias
+      run: npm install || true
+
+    - name: 🤖 Ejecutar Interrogación y Telemetría
+      run: node gerrit-client.cjs
+
+    - name: 📝 Confirmar cambios en state.json
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        
+        git status
+        if [[ -n "$(git status --porcelain state.json)" ]]; then
+          git add state.json
+          git commit -m "❤️ Telemetry-Heart: Actualización automática de estado [Auto]"
+          git push || echo "Push completado o sin cambios críticos"
+        else
+          echo "No se detectaron cambios en el estado. No es necesario actualizar."
+        fi
