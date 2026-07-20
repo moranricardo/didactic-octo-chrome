@@ -15,8 +15,10 @@ jobs:
     steps:
     - name: 📥 Clonar el repositorio
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
-    - name: 🟢 Configurar Node.js
+    - name: ⚙️ Configurar Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
@@ -27,16 +29,17 @@ jobs:
     - name: 🤖 Ejecutar Interrogación y Telemetría
       run: node gerrit-client.cjs
 
-    - name: 📝 Confirmar cambios en state.json
+    - name: 📝 Sincronizar y Confirmar cambios en state.json
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         
-        git status
+        git pull --rebase origin main || true
+        
         if [[ -n "$(git status --porcelain state.json)" ]]; then
           git add state.json
           git commit -m "❤️ Telemetry-Heart: Actualización automática de estado [Auto]"
-          git push || echo "Push completado o sin cambios críticos"
+          git push origin main || (git pull --rebase origin main && git push origin main)
         else
           echo "No se detectaron cambios en el estado. No es necesario actualizar."
         fi
