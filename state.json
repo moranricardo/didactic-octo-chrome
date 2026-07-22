@@ -1,10 +1,10 @@
 {
-    "timestamp": "2026-07-22T12:53:42.327Z",
+    "timestamp": "2026-07-22T13:53:03.262Z",
     "status": "OPERATIONAL",
     "modules": {
         "gerrit_client": {
             "last_sync_status": "SUCCESS",
-            "last_sync_time": "2026-07-22T12:53:42.327Z",
+            "last_sync_time": "2026-07-22T13:53:03.263Z",
             "changes_intercepted": 5
         },
         "telemetry_heart": {
@@ -13,7 +13,7 @@
     },
     "environment": {
         "platform": "linux",
-        "uptime_seconds": 3,
-        "ram_rss_mb": "46.28"
+        "uptime_seconds": 0,
+        "ram_rss_mb": "46.16"
     }
 }
