@@ -1,0 +1,42 @@
+{
+  "digital_entity": {
+    "name": "Ricardo Moran Maldonado",
+    "location": "Tijuana, Baja California, Mexico",
+    "designation": "Senior Automation Engineer & CI/CD Architect",
+    "specialties": [
+      "Termux & ARM Architectures",
+      "Scraping Inteligente y Resiliente",
+      "Optimización de pipelines CI/CD móviles"
+    ]
+  },
+  "system_core": {
+    "codename": "Cerebro Digital / Bot Factory",
+    "evolution": "818",
+    "geometry": "Toroidal",
+    "environment": "Termux (Linux sobre Android)",
+    "philosophy": "Local-First & Augmented Developer",
+    "ai_engine": "Ollama (Llama 3) - Procesamiento Local Agéntico"
+  },
+  "tech_stack": {
+    "languages": ["Node.js", "Go", "Bash"],
+    "automation": ["Puppeteer", "Playwright", "Octochrome", "didactic-octo-chrome"],
+    "infrastructure": ["GitHub Actions (Self-hosted runners)"]
+  },
+  "knowledge_architecture": {
+    "methodology": "P.A.R.A. (Projects, Areas, Resources, Archives)",
+    "telemetry": "state.json (Monitoreo del Pulso Toroidal)",
+    "security_protocols": [
+      "Protocolo Maat: Filtro estricto contra prefijos maliciosos",
+      "Auditoría Code-Review +2"
+    ]
+  },
+  "frequency_vibe": {
+    "focus_state": "High-energy coding flow",
+    "primary_genre": "Rap 90s",
+    "catalyst_artists": [
+      "Eminem",
+      "Snoop Dogg",
+      "The Notorious B.I.G."
+    ]
+  }
+}
