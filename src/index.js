@@ -1,6 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
+// Recreamos __dirname para ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const SANITIZED_FILE = path.join(__dirname, '../logs/maat_quarantine/sanitized_data.out');
 
 console.log("🐙 Iniciando núcleo lógicos de didactic-octo-chrome...");
