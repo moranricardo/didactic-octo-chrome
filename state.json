@@ -1,26 +1,10 @@
 {
-<<<<<<< HEAD
-    "timestamp": "2026-07-23T00:17:26.133Z",
-=======
-<<<<<<< Updated upstream
-    "timestamp": "2026-07-22T23:53:15.875Z",
-=======
-    "timestamp": "2026-07-21T04:37:43.345Z",
->>>>>>> Stashed changes
->>>>>>> ef8e275 (fix(merge): resuelve conflicto en state.json y restaura src/index.js)
+    "timestamp": "2026-07-23T00:23:28.508Z",
     "status": "OPERATIONAL",
     "modules": {
         "gerrit_client": {
             "last_sync_status": "SUCCESS",
-<<<<<<< HEAD
-            "last_sync_time": "2026-07-23T00:17:26.133Z",
-=======
-<<<<<<< Updated upstream
-            "last_sync_time": "2026-07-22T23:53:15.875Z",
-=======
-            "last_sync_time": "2026-07-21T04:37:43.364Z",
->>>>>>> Stashed changes
->>>>>>> ef8e275 (fix(merge): resuelve conflicto en state.json y restaura src/index.js)
+            "last_sync_time": "2026-07-23T00:23:28.509Z",
             "changes_intercepted": 5
         },
         "telemetry_heart": {
@@ -28,18 +12,8 @@
         }
     },
     "environment": {
-<<<<<<< Updated upstream
         "platform": "linux",
         "uptime_seconds": 0,
-<<<<<<< HEAD
-        "ram_rss_mb": "46.38"
-=======
-        "ram_rss_mb": "46.27"
-=======
-        "platform": "android",
-        "uptime_seconds": 1,
-        "ram_rss_mb": "39.25"
->>>>>>> Stashed changes
->>>>>>> ef8e275 (fix(merge): resuelve conflicto en state.json y restaura src/index.js)
+        "ram_rss_mb": "47.20"
     }
 }
