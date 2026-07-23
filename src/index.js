@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+// Puente dimensional para ES Modules (Recreación de __dirname)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const SANITIZED_FILE = path.join(__dirname, '../logs/maat_quarantine/sanitized_data.out');
@@ -14,26 +15,22 @@ try {
         process.exit(1);
     }
 
-    // Leemos el archivo purificado y limpiamos espacios al inicio/final
+    // Leemos el archivo purificado en cuarentena
     const rawData = fs.readFileSync(SANITIZED_FILE, 'utf8').trim();
     console.log("🛡️ Leyendo payload purificado por el Protocolo Maat...");
 
-    // Sensor de Estructura: ¿Es HTML o es JSON?
+    // Sensor de Estructura: Detectando si es HTML o JSON
     if (rawData.startsWith('<!DOCTYPE') || rawData.startsWith('<html')) {
-        console.log("🌐 Detectada matriz HTML (Web Scrape). Adaptando sensores...");
+        console.log("🌐 Detectada matriz HTML (Web Scrape). Analizando nodos...");
         
-        // Extracción táctica del título usando expresiones regulares
-        const titleMatch = rawData.match(/<title>(.*?)<\/title>/i);
-        const title = titleMatch ? titleMatch[1] : 'Nodo de título no encontrado';
+        // Extracción táctica del título real usando expresiones regulares avanzadas
+        const titleMatch = rawData.match(/<title[^>]*>(.*?)<\/title>/i);
+        const title = titleMatch ? titleMatch[1].trim() : 'Nodo de título no encontrado';
         
-        console.log("✅ Escaneo HTML exitoso.");
-        console.log(`📊 Peso del bloque: ${rawData.length} bytes decodificados.`);
-        console.log(`📌 Información extraída -> Título: ${title}`);
+        console.log("✅ Escaneo HTML completado con éxito.");
+        console.log(`📊 Peso del bloque analizado: ${rawData.length} bytes.`);
+        console.log(`📌 Información extraída -> Título del Nodo: ${title}`);
         
-        console.log("\n--- [ CÓDIGO FUENTE SUPERFICIAL ] ---");
-        console.log(rawData.substring(0, 300) + "\n... [CÓDIGO TRUNCADO PARA PROTEGER TERMINAL]");
-        console.log("--------------------------------------\n");
-
     } else {
         console.log("🧩 Detectada matriz JSON (API Endpoint). Procesando nodos...");
         const parsedData = JSON.parse(rawData);
@@ -43,5 +40,5 @@ try {
     }
 
 } catch (error) {
-    console.error("❌ Falla de parseo térmico:", error.message);
+    console.error("❌ Falla de parseo térmico en el motor:", error.message);
 }
