@@ -7,10 +7,18 @@ function getChromiumPath() {
     return process.env.PUPPETEER_EXECUTABLE_PATH;
   }
 
-  try {
-    const path = execSync('command -v chromium || command -v chromium-browser || command -v google-chrome || which chromium', { encoding: 'utf8' }).trim();
-    if (path && fs.existsSync(path)) return path;
-  } catch (e) {}
+  const commands = [
+    'command -v chromium',
+    'command -v chromium-browser',
+    'command -v google-chrome'
+  ];
+
+  for (const cmd of commands) {
+    try {
+      const path = execSync(cmd, { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }).trim();
+      if (path && fs.existsSync(path)) return path;
+    } catch (e) {}
+  }
 
   return null;
 }
