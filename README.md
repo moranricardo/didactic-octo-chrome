@@ -7,7 +7,7 @@ El proposito de este proyecto es implementar y demostrar los principios del Prot
 El motor opera mediante un sistema hibrido resiliente: ejecucion local/agentica (Termux) y orquestacion Cloud-Native a traves de **GitHub Actions**.
 
 ### Componentes Clave
-- **Motor Principal:** Ubicado en `index.cjs`, ejecuta la logica agentica y el analisis del bot.
+- **Motor Principal:** Ubicado en `src/index.js`, ejecuta la logica agentica y el analisis del bot.
 - **Estructura de Datos (P.A.R.A.):**
   - `1_Projects/` & `2_Areas/`: Gestion de tareas dinamicas y areas operativas.
   - `3_Resources/` & `4_Archives/`: Repositorio de conocimiento e historial.
@@ -27,7 +27,7 @@ El motor opera mediante un sistema hibrido resiliente: ejecucion local/agentica 
 
 2. **Ejecucion Local (Termux / Node.js):**
    ```bash
-   node index.cjs
+   node src/index.js
    ```
 
 3. **Ejecucion via Bash Helper:**
