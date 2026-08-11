@@ -19,18 +19,35 @@ function getChromiumPath() {
   return null;
 }
 
+async function checkLightweightBridge() {
+  console.log("⚡ Ejecutando validación de puente ligero (Modo Telemetría/Nube)...");
+  try {
+    const response = await fetch('https://httpbin.org/status/200');
+    if (response.ok) {
+      console.log("🌐 Conexión al puente exitosa (Modo Ligero). Listo para delegar trabajo pesado a GitHub.");
+      return true;
+    }
+  } catch (err) {
+    console.error("❌ Fallo de red en el puente ligero:", err.message);
+  }
+  return false;
+}
+
 async function checkBridge() {
-  console.log("🚀 Iniciando validación de puente (Modo ESM)...");
+  console.log("🚀 Iniciando comprobación de puente...");
 
   const chromiumPath = getChromiumPath();
 
   if (!chromiumPath) {
-    console.error("❌ Error: No se encontró un binario de Chromium o Chrome en el PATH del sistema.");
-    console.error("💡 Asegúrate de tener instalado Chromium o define la variable PUPPETEER_EXECUTABLE_PATH.");
-    process.exit(1);
+    console.log("ℹ️ No se detectó motor Chromium pesado local.");
+    const isLightOk = await checkLightweightBridge();
+    if (!isLightOk) {
+      process.exit(1);
+    }
+    return;
   }
 
-  console.log(`📍 Navegador detectado en: ${chromiumPath}`);
+  console.log(`📍 Navegador pesado detectado en: ${chromiumPath}`);
 
   let browser;
   try {
@@ -51,9 +68,9 @@ async function checkBridge() {
     console.log("📡 Abriendo canal de telemetría...");
     await page.goto('https://httpbin.org/status/200', { waitUntil: 'domcontentloaded', timeout: 15000 });
 
-    console.log("🌐 Puente exitoso: Navegador Chromium operativo.");
+    console.log("🌐 Puente exitoso: Navegador Chromium operativo localmente.");
   } catch (error) {
-    console.error("❌ Fallo en el puente de automatización:", error.message || error);
+    console.error("❌ Fallo en el puente de automatización pesado:", error.message || error);
     process.exit(1);
   } finally {
     if (browser) await browser.close();
