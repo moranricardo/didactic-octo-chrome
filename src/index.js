@@ -1,44 +1,24 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const fs = require('fs');
+const path = require('path');
 
-// Puente dimensional para ES Modules (Recreación de __dirname)
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const SANITIZED_FILE = path.join(__dirname, '../logs/maat_quarantine/sanitized_data.out');
+console.log("🐙 Iniciando núcleo lógico de didactic-octo-chrome (Evolución P.A.R.A)...");
 
-console.log("🐙 Iniciando núcleo lógico de didactic-octo-chrome...");
+const profilePath = path.join(__dirname, '../data/profile.json');
 
 try {
-    if (!fs.existsSync(SANITIZED_FILE)) {
-        console.error("❌ Archivo sanitizado no detectado. Ejecuta el Gerrit-Client primero.");
-        process.exit(1);
-    }
+  if (!fs.existsSync(profilePath)) {
+    console.error("❌ Archivo de identidad (profile.json) no detectado. Memoria vacía.");
+    process.exit(1);
+  }
 
-    // Leemos el archivo purificado en cuarentena
-    const rawData = fs.readFileSync(SANITIZED_FILE, 'utf8').trim();
-    console.log("🛡️ Leyendo payload purificado por el Protocolo Maat...");
-
-    // Sensor de Estructura: Detectando si es HTML o JSON
-    if (rawData.startsWith('<!DOCTYPE') || rawData.startsWith('<html')) {
-        console.log("🌐 Detectada matriz HTML (Web Scrape). Analizando nodos...");
-        
-        // Extracción táctica del título real usando expresiones regulares avanzadas
-        const titleMatch = rawData.match(/<title[^>]*>(.*?)<\/title>/i);
-        const title = titleMatch ? titleMatch[1].trim() : 'Nodo de título no encontrado';
-        
-        console.log("✅ Escaneo HTML completado con éxito.");
-        console.log(`📊 Peso del bloque analizado: ${rawData.length} bytes.`);
-        console.log(`📌 Información extraída -> Título del Nodo: ${title}`);
-        
-    } else {
-        console.log("🧩 Detectada matriz JSON (API Endpoint). Procesando nodos...");
-        const parsedData = JSON.parse(rawData);
-        
-        console.log("✅ Decodificación JSON exitosa.");
-        console.log(`📊 Tamaño del payload: ${Object.keys(parsedData).length} raíces detectadas.`);
-    }
-
+  const profile = JSON.parse(fs.readFileSync(profilePath, 'utf8'));
+  
+  console.log(`✅ Identidad cargada: ${profile.bot_name} (v${profile.version})`);
+  console.log(`👤 Propietario: ${profile.owner}`);
+  console.log(`⚙️ Módulos en línea: ${profile.modules.join(', ')}`);
+  console.log("🚀 Motor orquestador sincronizado y listo para ejecutar tareas de Protocolo 818.");
+  
 } catch (error) {
-    console.error("❌ Falla de parseo térmico en el motor:", error.message);
+  console.error("❌ Error interno al acceder a la base de conocimiento:", error.message);
+  process.exit(1);
 }
