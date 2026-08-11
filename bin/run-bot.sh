@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/usr/bin/env bash
 
 # Determinar directorio raíz del proyecto dinámicamente
 PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
@@ -15,6 +15,6 @@ while true; do
         ./blindar.sh "evidencias/captura.png"
     fi
 
-    # Pausa de seguridad entre iteraciones para evitar bucles infinitos agresivos
+    # Pausa de seguridad entre iteraciones
     sleep 5
 done
