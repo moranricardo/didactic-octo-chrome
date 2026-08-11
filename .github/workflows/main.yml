@@ -2,7 +2,6 @@ name: El Toroide Adiamantado
 
 on:
   workflow_dispatch:
-    branches: [ main ]
   push:
     branches: [ main ]
 
@@ -27,6 +26,6 @@ jobs:
         run: chmod +x ./bin/*.sh *.sh 2>/dev/null || true
 
       - name: Ejecutar Motor de Análisis (Node.js)
-        run: node index.cjs
+        run: node src/index.js
         env:
           NODE_ENV: production
