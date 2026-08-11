@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Apuntamos directamente al repositorio ubicado en la tarjeta SD / almacenamiento externo
+cd ~/storage/shared/Projects/didactic-octo-chrome
+
+while true; do
+    echo "[$(date)] 🤖 Iniciando auditoría desde la SD..."
+
+    node index.cjs || echo "⚠️ El bot finalizó con error, pero continuamos..."
+
+    if [ -f "evidencias/captura.png" ]; then
+        ./blindar.sh "evidencias/captura.png"
+    fi
+
+    echo "✅ Ciclo terminado. Esperando 1 hora..."
+    sleep 3600
+done
