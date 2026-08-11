@@ -7,15 +7,11 @@ function getChromiumPath() {
     return process.env.PUPPETEER_EXECUTABLE_PATH;
   }
 
-  const commands = [
-    'command -v chromium',
-    'command -v chromium-browser',
-    'command -v google-chrome'
-  ];
+  const binaries = ['chromium', 'chromium-browser', 'google-chrome', 'chrome'];
 
-  for (const cmd of commands) {
+  for (const bin of binaries) {
     try {
-      const path = execSync(cmd, { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'] }).trim();
+      const path = execSync(`command -v ${bin}`, { encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'], shell: true }).trim();
       if (path && fs.existsSync(path)) return path;
     } catch (e) {}
   }
