@@ -1,16 +1,20 @@
 #!/data/data/com.termux/files/usr/bin/bash
-cd /data/data/com.termux/files/home/didactic-octo-chrome
+
+# Determinar directorio raíz del proyecto dinámicamente
+PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+cd "$PROJECT_ROOT" || exit 1
+
 while true; do
-    echo "[$(date)] 🤖 Iniciando auditoría..."
-    
-    # Ejecutamos el bot y forzamos que el script continúe aunque el bot falle
+    echo "[$(date)] 🤖 Iniciando ciclo de auditoría..."
+
+    # Ejecutar el proceso principal
     node index.cjs || echo "⚠️ El bot finalizó con error, pero continuamos..."
 
-    # Blindaje
-    if [ -f "evidencias/captura.png" ]; then
+    # Blindaje de evidencias si existen
+    if [ -f "evidencias/captura.png" ] && [ -x "./blindar.sh" ]; then
         ./blindar.sh "evidencias/captura.png"
     fi
 
-    echo "✅ Ciclo terminado. Esperando 1 hora..."
-    sleep 3600
+    # Pausa de seguridad entre iteraciones para evitar bucles infinitos agresivos
+    sleep 5
 done
