@@ -3,21 +3,15 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 
 function getChromiumPath() {
+  if (process.env.PUPPETEER_EXECUTABLE_PATH && fs.existsSync(process.env.PUPPETEER_EXECUTABLE_PATH)) {
+    return process.env.PUPPETEER_EXECUTABLE_PATH;
+  }
+
   try {
-    const path = execSync('command -v chromium || command -v chromium-browser', { encoding: 'utf8' }).trim();
+    const path = execSync('command -v chromium || command -v chromium-browser || command -v google-chrome || which chromium', { encoding: 'utf8' }).trim();
     if (path && fs.existsSync(path)) return path;
   } catch (e) {}
 
-  const commonPaths = [
-    '/data/data/com.termux/files/usr/bin/chromium',
-    '/data/data/com.termux/files/usr/bin/chromium-browser',
-    '/usr/bin/chromium',
-    '/usr/bin/chromium-browser'
-  ];
-
-  for (const path of commonPaths) {
-    if (fs.existsSync(path)) return path;
-  }
   return null;
 }
 
@@ -27,22 +21,25 @@ async function checkBridge() {
   const chromiumPath = getChromiumPath();
 
   if (!chromiumPath) {
-    console.error("❌ Error: No se encontró el binario de Chromium en el entorno.");
+    console.error("❌ Error: No se encontró un binario de Chromium o Chrome en el PATH del sistema.");
+    console.error("💡 Asegúrate de tener instalado Chromium o define la variable PUPPETEER_EXECUTABLE_PATH.");
     process.exit(1);
   }
 
-  console.log(`📍 Chromium detectado en: ${chromiumPath}`);
+  console.log(`📍 Navegador detectado en: ${chromiumPath}`);
 
   let browser;
   try {
     browser = await puppeteer.launch({
-      headless: true,
+      headless: 'new',
       executablePath: chromiumPath,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
-        '--disable-gpu'
+        '--disable-gpu',
+        '--no-first-run',
+        '--no-zygote'
       ]
     });
 
