@@ -1,27 +1,36 @@
 # Didactic-Octo-Chrome: El Toroide Adiamantado
 
 ## Protocol 818 Principles
-The purpose of this project is to implement and demonstrate the principles of Protocol 818, providing a comprehensive solution for various computational tasks while adhering to the outlined guidelines.
+El proposito de este proyecto es implementar y demostrar los principios del Protocolo 818, sirviendo como nucleo de automatizacion, orquestacion y cerebro digital autonomo.
 
-## Arquitectura Evolucionada (Evolución 818)
-Este proyecto es un motor de automatización y auditoría resiliente. Ha evolucionado de una ejecución local basada en `cron` a un sistema **Cloud-Native** orquestado por **GitHub Actions**.
+## Arquitectura Evolucionada (Evolucion P.A.R.A. & Cloud-Native)
+El motor opera mediante un sistema hibrido resiliente: ejecucion local/agentica (Termux) y orquestacion Cloud-Native a traves de **GitHub Actions**.
 
 ### Componentes Clave
-- **Motor (Ra Pulse):** Ubicado en `src/index.js`, ejecuta la lógica de auditoría sobre Gerrit mediante módulos ESM.
-- **Capa de Red:** `src/clients/gerritClient.js` para comunicaciones seguras mediante peticiones HTTPS directas.
-- **Persistencia:** El estado del sistema se sincroniza automáticamente en `state.json` mediante commits del bot (`github-actions[bot]`).
-- **Orquestación:** `.github/workflows/main.yml` gestiona el ciclo de vida (ejecución programada, persistencia y despliegue).
-
-### Flujo de Trabajo
-1. **Trigger:** Programado vía cron o disparado manualmente.
-2. **Ejecución:** Node.js 22 procesa la auditoría en un entorno aislado (Ubuntu/GitHub Actions).
-3. **Persistencia:** Si se detectan cambios, se commitea de vuelta al repositorio (`[skip ci]`).
-4. **Resiliencia:** El sistema está diseñado para fallar rápido y reportar estados inconsistentes vía logs.
+- **Motor Principal:** Ubicado en `index.cjs`, ejecuta la logica agentica y el analisis del bot.
+- **Estructura de Datos (P.A.R.A.):**
+  - `1_Projects/` & `2_Areas/`: Gestion de tareas dinamicas y areas operativas.
+  - `3_Resources/` & `4_Archives/`: Repositorio de conocimiento e historial.
+  - `bin/`: Scripts ejecutables y utilidades CLI (`run-bot.sh`, etc.).
+  - `data/`: Perfil contextual (`profile.json`) y registros de estado.
+- **Orquestacion CI/CD:** `.github/workflows/main.yml` gestiona las ejecuciones en la nube (Node.js 20).
 
 ---
 
-## Setup Instructions
-1. Clone the repository:
+## Setup & Ejecucion
+
+1. **Clonar el repositorio:**
    ```bash
    git clone [https://github.com/moranricardo/didactic-octo-chrome.git](https://github.com/moranricardo/didactic-octo-chrome.git)
+   cd didactic-octo-chrome
+   ```
 
+2. **Ejecucion Local (Termux / Node.js):**
+   ```bash
+   node index.cjs
+   ```
+
+3. **Ejecucion via Bash Helper:**
+   ```bash
+   ./bin/run-bot.sh
+   ```
