@@ -1,5 +1,3 @@
-import fetch from 'node-fetch'; // Usará fetch global de Node o fallback
-
 // Endpoint público por defecto (Android Source Code)
 const GERRIT_BASE_URL = 'https://android-review.googlesource.com';
 
