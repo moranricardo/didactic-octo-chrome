@@ -2,6 +2,7 @@ name: El Toroide Adiamantado
 
 on:
   workflow_dispatch:
+    branches: [ main ]
   push:
     branches: [ main ]
 
@@ -20,15 +21,12 @@ jobs:
           cache: 'npm'
 
       - name: Instalar Dependencias
-        run: npm ci
+        run: npm ci || npm install
 
-      - name: Otorgar permisos de ejecución a los scripts
-        run: chmod +x ./scripts/*.sh
-
-      - name: Ejecutar Gerrit Client (Protocolo Maat)
-        run: ./scripts/gerrit_client.sh
+      - name: Otorgar permisos de ejecución a binaries y scripts
+        run: chmod +x ./bin/*.sh *.sh 2>/dev/null || true
 
       - name: Ejecutar Motor de Análisis (Node.js)
-        run: node src/index.js
+        run: node index.cjs
         env:
           NODE_ENV: production

@@ -1,0 +1,11 @@
+{
+  "bot_name": "Digital Self / Personal Clone",
+  "version": "1.0.0",
+  "owner": "Ricardo Moran",
+  "status": "active",
+  "modules": [
+    "automation",
+    "ci_cd",
+    "personal_brain"
+  ]
+}
