@@ -1,12 +1,16 @@
-const fs = require('fs').promises;
-const path = require('path');
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const STATE_FILE = path.join(__dirname, 'state.json');
 
-async function updateSystemState(gerritStatus = 'IDLE', extraData = {}) {
+export async function updateSystemState(gerritStatus = 'IDLE', extraData = {}) {
     try {
         const memoryUsage = process.memoryUsage();
-        
+
         const telemetryHeart = {
             timestamp: new Date().toISOString(),
             status: "OPERATIONAL",
@@ -23,17 +27,14 @@ async function updateSystemState(gerritStatus = 'IDLE', extraData = {}) {
             environment: {
                 platform: process.platform,
                 uptime_seconds: Math.floor(process.uptime()),
-                ram_rss_mb: (memoryUsage.rss / 1024 / 1024).toFixed(2)
+                ram_rss_mb: Number((memoryUsage.rss / 1024 / 1024).toFixed(2))
             }
         };
 
         await fs.writeFile(STATE_FILE, JSON.stringify(telemetryHeart, null, 4), 'utf8');
         console.log('❤️ Telemetry-Heart: state.json actualizado correctamente.');
-        
+
     } catch (error) {
         console.error('❌ Telemetry-Heart: Error escribiendo el estado:', error.message);
     }
 }
-
-// Limpiado: Ya no se ejecuta automáticamente aquí en la importación.
-module.exports = { updateSystemState };
