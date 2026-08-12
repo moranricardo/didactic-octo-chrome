@@ -1,17 +1,20 @@
 {
   "name": "didactic-octo-chrome",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "audit": "node bin/run-bot.sh",
+    "audit": "bash runner.sh",
     "test:bridge": "node herramientas/test-bridge.js"
   },
   "description": "Gerrit Telemetry Bridge - Protocol 818 - Modular Architecture",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moranricardo/didactic-octo-chrome.git"
+    "url": "https://github.com/moranricardo/didactic-octo-chrome.git"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   },
   "author": "Ricardo Moran Maldonado",
   "license": "ISC",
