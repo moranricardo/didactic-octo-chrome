@@ -1,57 +1,49 @@
-import https from 'https';
+import { updateSystemState } from '../services/telemetry.js';
 
-/**
- * Cliente Gerrit optimizado para arquitectura Cloud-Native.
- * @param {string} endpoint - El path de la API REST.
- * @param {Object|string} [opts='android-review.googlesource.com'] - Host o configuración.
- */
-export async function requestGerrit(endpoint, opts = 'android-review.googlesource.com') {
-    const host = typeof opts === 'string' ? opts : (opts.host || 'android-review.googlesource.com');
-    const authenticated = typeof opts === 'object' ? (opts.authenticated || false) : false;
+const GERRIT_URL = 'https://android-review.googlesource.com/changes/?q=status:open&n=5';
 
-    return new Promise((resolve, reject) => {
-        let path = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
-        if (authenticated && !path.startsWith('/a/')) {
-            path = `/a${path}`;
-        }
+export async function requestGerrit(timeoutMs = 8000) {
+  console.log(`🤖 Ra Pulse -> Interrogando Gerrit en: ${GERRIT_URL}`);
 
-        const options = {
-            hostname: host,
-            port: 443,
-            path: path,
-            method: 'GET',
-            headers: { 
-                'Accept': 'application/json', 
-                'User-Agent': 'Diamond-Orchestrator/1.0' 
-            }
-        };
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
 
-        const req = https.request(options, (res) => {
-            if (res.statusCode < 200 || res.statusCode >= 300) {
-                reject(new Error(`Gerrit devolvió código de error HTTP ${res.statusCode}`));
-                res.resume();
-                return;
-            }
-
-            let data = '';
-            res.on('data', (chunk) => data += chunk);
-            res.on('end', () => {
-                // Limpieza limpia del prefijo de seguridad Anti-XSS
-                const cleanData = data.replace(/^\)]\}'[\s]*/, '');
-                try {
-                    resolve(JSON.parse(cleanData));
-                } catch (e) {
-                    reject(new Error(`Error al parsear JSON de Gerrit: ${e.message}`));
-                }
-            });
-        });
-
-        req.on('error', reject);
-        req.setTimeout(10000, () => {
-            req.destroy();
-            reject(new Error("Timeout de conexión con Gerrit"));
-        });
-
-        req.end();
+  try {
+    const response = await fetch(GERRIT_URL, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'User-Agent': 'Diamond-Orchestrator/1.0 (Gerrit-Client)'
+      },
+      signal: controller.signal
     });
+
+    if (!response.ok) {
+      throw new Error(`Respuesta HTTP no válida: ${response.status}`);
+    }
+
+    const rawData = await response.text();
+    const cleanData = rawData.replace(/^\)]}'\n?/, '');
+
+    const changes = JSON.parse(cleanData);
+    console.log(`✅ JSON parseado. Se procesaron ${changes.length} cambios recientemente.`);
+
+    changes.forEach((c) => {
+      const id = c.change_id ? c.change_id.substring(0, 8) : 'N/A';
+      const subject = c.subject ? c.subject.substring(0, 60) : 'Sin asunto';
+      console.log(`   [${id}] ${subject}...`);
+    });
+
+    await updateSystemState('SUCCESS', { changesCount: changes.length });
+    return changes;
+
+  } catch (error) {
+    const isTimeout = error.name === 'AbortError';
+    const errorType = isTimeout ? 'NETWORK_ERROR' : 'PARSE_ERROR';
+    
+    console.error(`❌ Error en cliente Gerrit (${errorType}):`, error.message);
+    await updateSystemState(errorType, { changesCount: 0 });
+  } finally {
+    clearTimeout(timer);
+  }
 }
