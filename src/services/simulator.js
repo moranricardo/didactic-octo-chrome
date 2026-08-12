@@ -1,34 +1,40 @@
-// src/services/simulator.js
-import https from 'https';
+/**
+ * Servicio de Simulación y Telemetría de Salida de Red.
+ */
+export async function ejecutarSimulacion(query = 'comoobtener+un+dom', timeoutMs = 8000) {
+  const timestamp = new Date().toISOString();
+  const targetUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
 
-const options = {
-  hostname: 'www.google.com',
-  port: 443,
-  path: '/search?q=comoobtener+un+dom',
-  method: 'GET'
-};
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
 
-export async function ejecutarSimulacion() {
-    return new Promise((resolve) => {
-        let telemetria = { status: "PENDING", timestamp: new Date().toISOString() };
-
-        const req = https.request(options, (res) => {
-            res.on('data', () => {}); 
-            res.on('end', () => {
-                telemetria.status = "STABLE";
-                telemetria.httpCode = res.statusCode;
-                resolve(telemetria);
-            });
-        });
-
-        req.on('error', (e) => {
-            resolve({ 
-                status: "ERROR", 
-                error: e.message, 
-                timestamp: new Date().toISOString() 
-            });
-        });
-
-        req.end();
+  try {
+    const response = await fetch(targetUrl, {
+      method: 'GET',
+      headers: {
+        'User-Agent': 'Diamond-Orchestrator/1.0 (Simulation Node)',
+        'Accept': 'text/html'
+      },
+      signal: controller.signal
     });
+
+    // Consumir y descartar stream para liberar recursos inmediatamente
+    await response.arrayBuffer();
+
+    return {
+      status: response.ok ? "STABLE" : "WARN",
+      httpCode: response.status,
+      query,
+      timestamp
+    };
+  } catch (error) {
+    const isTimeout = error.name === 'AbortError';
+    return {
+      status: "ERROR",
+      error: isTimeout ? `Timeout tras ${timeoutMs}ms` : error.message,
+      timestamp
+    };
+  } finally {
+    clearTimeout(timer);
+  }
 }
