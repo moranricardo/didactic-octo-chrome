@@ -1,27 +1,42 @@
-# --- Entorno Local ---
+# --- Entorno Local y Dependencias ---
 node_modules/
 package-lock.json
+.npm/
+.cache/
 
-# --- Logs y Telemetría ---
+# --- Logs, Telemetría y Temporales ---
 *.log
 logs/
 state.json
 state.json.gpg
 last_pulse.json
+*.tmp
+*.swp
 
-# --- Configuración (IMPORTANTE) ---
+# --- Datos Locales, Sanitización y Cargas ---
+data/
+quarantine/
+*.payload.json
+
+# --- Configuración y Secretos (IMPORTANTE) ---
 config.json
+.env
+.env.*
+*.key
+*.pem
 
 # --- Evidencias y Blindaje ---
 evidencias/
 captura.png
-/*.png
+*.png
+*.jpg
+*.jpeg
 
 # --- Sistema y Metadatos ---
 .DS_Store
+Thumbs.db
 .vscode/
 .idea/
-.env
 
 # --- Directorios de Prueba (Limpieza de estructura) ---
 scaling-meme/
