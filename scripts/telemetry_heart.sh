@@ -1,27 +1,43 @@
-#!/bin/bash
-# ==========================================
-# Telemetry-Heart - Vórtice Toroidal (818)
-# ==========================================
+#!/usr/bin/env bash
+set -euo pipefail
 
 TIMESTAMP=$(date -u +%FT%TZ)
-CLONE_FILE="config/clone_injection.json"
+PRIMARY_PROFILE="data/profile.json"
+SECONDARY_PROFILE="config/clone_injection.json"
 STATE_FILE="logs/state.json"
 
-echo "Iniciando escaneo del núcleo..."
+mkdir -p logs
 
-# Extrayendo datos del ADN inyectado usando grep y awk
-if [ -f "$CLONE_FILE" ]; then
-    ENTITY=$(grep '"name"' $CLONE_FILE | awk -F'"' '{print $4}')
-    VIBE=$(grep '"focus_state"' $CLONE_FILE | awk -F'"' '{print $4}')
-    GENRE=$(grep '"primary_genre"' $CLONE_FILE | awk -F'"' '{print $4}')
-else
-    ENTITY="Entidad Chrome-mobile-es-419"
-    VIBE="Descalibrado"
-    GENRE="Ruido Blanco"
+echo "🌀 Initiating Core Telemetry Scan..."
+
+read_json_field() {
+    local file="$1"
+    local query="$2"
+    if command -v jq >/dev/null 2>&1; then
+        jq -r "$query // empty" "$file" 2>/dev/null || true
+    fi
+}
+
+ENTITY=""
+VIBE=""
+GENRE=""
+
+if [ -f "$PRIMARY_PROFILE" ]; then
+    ENTITY=$(read_json_field "$PRIMARY_PROFILE" '.digital_entity.name')
+    VIBE=$(read_json_field "$PRIMARY_PROFILE" '.frequency_vibe.focus_state')
+    GENRE=$(read_json_field "$PRIMARY_PROFILE" '.frequency_vibe.primary_genre')
+elif [ -f "$SECONDARY_PROFILE" ]; then
+    ENTITY=$(read_json_field "$SECONDARY_PROFILE" '.name')
+    VIBE=$(read_json_field "$SECONDARY_PROFILE" '.focus_state')
+    GENRE=$(read_json_field "$SECONDARY_PROFILE" '.primary_genre')
 fi
 
-# Inyectando el pulso en el state.json usando la firma RAPULSE
-cat <<RAPULSE > $STATE_FILE
+# Fallback si no se encontró con jq o archivo
+[ -z "$ENTITY" ] && ENTITY="Ricardo Moran Maldonado"
+[ -z "$VIBE" ] && VIBE="High-energy coding flow"
+[ -z "$GENRE" ] && GENRE="Rap 90s"
+
+cat <<RAPULSE > "$STATE_FILE"
 {
   "telemetry_pulse": "$TIMESTAMP",
   "system_status": "ONLINE",
@@ -35,5 +51,5 @@ cat <<RAPULSE > $STATE_FILE
 }
 RAPULSE
 
-echo "🌀 Pulso Toroidal registrado exitosamente por $ENTITY."
-echo "Estado actual guardado en: $STATE_FILE"
+echo "⚡ Pulso Toroidal registrado exitosamente por $ENTITY."
+echo "📍 Estado actual guardado en: $STATE_FILE"
