@@ -1,36 +1,31 @@
-# Didactic-Octo-Chrome: El Toroide Adiamantado
+git add . && git commit -m "update" && git push![Header](https://capsule-render.vercel.app/api?type=waving&color=00ADD8&height=180&section=header&text=Ricardo%20Moran&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Go%20Developer%20|%20Security%20First&descAlignY=55)
 
-## Protocol 818 Principles
-El proposito de este proyecto es implementar y demostrar los principios del Protocolo 818, sirviendo como nucleo de automatizacion, orquestacion y cerebro digital autonomo.
+# Hi, I'm Ricardo 👋
 
-## Arquitectura Evolucionada (Evolucion P.A.R.A. & Cloud-Native)
-El motor opera mediante un sistema hibrido resiliente: ejecucion local/agentica (Termux) y orquestacion Cloud-Native a traves de **GitHub Actions**.
+### Go Developer | Security First | Dependabot Lite
+📍 Tijuana, MX 🇲🇽 | 📫 moranmaldonadoricardo@gmail.com
 
-### Componentes Clave
-- **Motor Principal:** Ubicado en `src/index.js`, ejecuta la logica agentica y el analisis del bot.
-- **Estructura de Datos (P.A.R.A.):**
-  - `1_Projects/` & `2_Areas/`: Gestion de tareas dinamicas y areas operativas.
-  - `3_Resources/` & `4_Archives/`: Repositorio de conocimiento e historial.
-  - `bin/`: Scripts ejecutables y utilidades CLI (`run-bot.sh`, etc.).
-  - `data/`: Perfil contextual (`profile.json`) y registros de estado.
-- **Orquestacion CI/CD:** `.github/workflows/main.yml` gestiona las ejecuciones en la nube (Node.js 20).
+<p>
+<img src="https://img.shields.io/badge/Go-1.27-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
+<img src="https://img.shields.io/badge/Security-First-FF0000?style=for-the-badge&logo=hackthebox&logoColor=white" />
+<img src="https://img.shields.io/badge/Dependabot-Lite-025E8C?style=for-the-badge&logo=dependabot&logoColor=white" />
+<img src="https://komarev.com/ghpvc/?username=moranricardo&label=Profile%20views&color=0e75b6&style=flat" />
+</p>
 
 ---
 
-## Setup & Ejecucion
+**Building secure, efficient tools with Go. Focused on Dependabot Lite and Security Best Practices.**
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone [https://github.com/moranricardo/didactic-octo-chrome.git](https://github.com/moranricardo/didactic-octo-chrome.git)
-   cd didactic-octo-chrome
-   ```
+- 🔭 Working on: Go 1.27 migration & security hardening
+- 🌱 Learning: Advanced Go Patterns & Cloud Native
+- 🛡️ Philosophy: Security First, Code Always
 
-2. **Ejecucion Local (Termux / Node.js):**
-   ```bash
-   node src/index.js
-   ```
+### 🛠️ Stack
+`Go` `Bash` `Docker` `GitHub Actions` `Linux` `Security`
 
-3. **Ejecucion via Bash Helper:**
-   ```bash
-   ./bin/run-bot.sh
-   ```
+### 📊 Stats
+![Stats](https://github-readme-stats.vercel.app/api?username=moranricardo&show_icons=true&theme=tokyonight&hide_border=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=moranricardo&layout=compact&theme=tokyonight&hide_border=true)
+
+---
+⚡ Security First, Code Always ⚡
