@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "golang.go",
+    "dbaeumer.vscode-eslint",
+    "GitHub.copilot",
+    "ms-vscode.vscode-github-actions"
+  ]
+}
