@@ -1,16 +1,31 @@
 import http from 'node:http';
+import { readFile, writeFile } from 'node:fs/promises';
 
 const PORT = 3000;
+const DB_FILE = './data.json';
 
-const server = http.createServer((req, res) => {
+// Inicializar archivo de datos si no existe
+try {
+  await readFile(DB_FILE);
+} catch {
+  await writeFile(DB_FILE, JSON.stringify({ visitas: 0 }));
+}
+
+const server = http.createServer(async (req, res) => {
   const { url, method } = req;
 
-  if (url === '/' && method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
-    res.end('🚀 Inicio del laboratorio Node.js');
-  } else if (url === '/api/info' && method === 'GET') {
+  if (url === '/visita' && method === 'POST') {
+    const rawData = await readFile(DB_FILE, 'utf-8');
+    const data = JSON.parse(rawData);
+    data.visitas += 1;
+    await writeFile(DB_FILE, JSON.stringify(data, null, 2));
+
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ status: 'ok', nodeVersion: process.version }));
+    res.end(JSON.stringify({ mensaje: 'Visita registrada', ...data }));
+  } else if (url === '/visitas' && method === 'GET') {
+    const rawData = await readFile(DB_FILE, 'utf-8');
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(rawData);
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('404 | Ruta no encontrada');
@@ -18,5 +33,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Servidor con rutas activo en http://localhost:${PORT}`);
+  console.log(`Servidor activo con persistencia en http://localhost:${PORT}`);
 });
