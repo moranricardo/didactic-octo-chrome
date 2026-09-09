@@ -1,44 +1,13 @@
-# --- Entorno Local y Dependencias ---
+# Dependencias y variables de entorno
 node_modules/
-package-lock.json
-.npm/
-.cache/
-
-# --- Logs, Telemetría y Temporales ---
-*.log
-logs/
-state.json
-state.json.gpg
-last_pulse.json
-*.tmp
-*.swp
-
-# --- Datos Locales, Sanitización y Cargas ---
-data/
-quarantine/
-*.payload.json
-
-# --- Configuración y Secretos (IMPORTANTE) ---
-config.json
 .env
 .env.*
-*.key
-*.pem
 
-# --- Evidencias y Blindaje ---
-evidencias/
-captura.png
-*.png
-*.jpg
-*.jpeg
+# Logs y archivos temporales
+*.log
+*.tmp
 
-# --- Sistema y Metadatos ---
+# Archivos del editor y del sistema
+.vscode/
 .DS_Store
 Thumbs.db
-.vscode/
-.idea/
-
-# --- Directorios de Prueba (Limpieza de estructura) ---
-scaling-meme/
-proyecto-nuevo/
-git-espejo/
