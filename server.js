@@ -1,28 +1,34 @@
 import http from 'node:http';
-import { exec } from 'node:child_process';
-import { promisify } from 'node:util';
 
-const execPromise = promisify(exec);
 const PORT = 3000;
+
+// Helper para parsear el body JSON de forma asíncrona
+const parseJSON = (req) => {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', chunk => { body += chunk.toString(); });
+    req.on('end', () => {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch (err) {
+        reject(err);
+      }
+    });
+    req.on('error', reject);
+  });
+};
 
 const server = http.createServer(async (req, res) => {
   const { url, method } = req;
 
-  if (url === '/system/info' && method === 'GET') {
+  if (url === '/api/echo' && method === 'POST') {
     try {
-      // Ejecutamos comandos nativos de la shell de Termux
-      const { stdout: uptime } = await execPromise('uptime');
-      const { stdout: uname } = await execPromise('uname -a');
-
+      const data = await parseJSON(req);
       res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({
-        status: 'ok',
-        uptime: uptime.trim(),
-        kernel: uname.trim()
-      }));
-    } catch (error) {
-      res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: error.message }));
+      res.end(JSON.stringify({ recibido: data, timestamp: Date.now() }));
+    } catch {
+      res.writeHead(400, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'JSON inválido' }));
     }
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
@@ -31,5 +37,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Servidor con child_process en http://localhost:${PORT}`);
+  console.log(`Servidor con parser activo en http://localhost:${PORT}`);
 });
