@@ -1,5 +1,0 @@
-{
-  "last_trigger": "2026-08-12T18:07:17Z",
-  "reason": "manual_audit",
-  "requested_by": "Ricardo Moran Maldonado"
-}
