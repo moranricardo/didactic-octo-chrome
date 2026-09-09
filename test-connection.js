@@ -1,35 +1,29 @@
-import { getGerritData, getUrgentCommits } from './herramientas/lib-gerrit.js';
-import { updateSystemState } from './telemetry.js';
+// test-connection.js (Versión independiente para aprendizaje)
 
 async function testDrive() {
-    console.log('--- ☀️ INICIANDO CICLO DE RA: PRUEBA DE PULSO ---');
+  console.log('--- ☀️ PRUEBA DE CONEXIÓN HTTP ---');
 
-    try {
-        console.log('\n[Fase 1] Verificando endpoint público de Gerrit...');
-        const publicChanges = await getGerritData('changes/?q=status:open&n=3');
-
-        const count = Array.isArray(publicChanges) ? publicChanges.length : 0;
-        console.log(`✅ Conexión establecida. Se detectaron ${count} cambios abiertos en el servidor.`);
-
-        console.log('\n[Fase 2] Invocando el radar analítico (getUrgentCommits)...');
-        const urgentCommits = await getUrgentCommits(5);
-
-        console.log('\n--- 📋 REPORTE DE ANOMALÍAS ENCONTRADAS ---');
-        if (!urgentCommits || urgentCommits.length === 0) {
-            console.log('✨ El horizonte está despejado. No se encontraron bloqueos CR-2 o Verified-1.');
-        } else {
-            console.table(urgentCommits);
-        }
-
-        await updateSystemState('SUCCESS', { changesCount: count });
-        console.log('\n⚡ El pulso del sistema es óptimo. Listos para producción.');
-
-    } catch (err) {
-        console.error('\n🚨 ¡ERROR EN LA CONEXIÓN O ANÁLISIS!');
-        console.error(`💥 Mensaje: ${err.message || err}`);
-        await updateSystemState('ERROR', { error: err.message });
-        process.exit(1);
+  try {
+    console.log('[1/2] Consultando API pública de prueba...');
+    
+    // Consulta a una API pública JSON sin requerir librerías locales
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+    
+    if (!response.ok) {
+      throw new Error(`Estado de respuesta HTTP: ${response.status}`);
     }
+
+    const data = await response.json();
+    console.log('✅ Datos recibidos con éxito:');
+    console.table(data);
+
+    console.log('\n⚡ Ejecución completada correctamente.');
+
+  } catch (err) {
+    console.error('\n🚨 Error en la conexión:');
+    console.error(`💥 Mensaje: ${err.message}`);
+    process.exit(1);
+  }
 }
 
 testDrive();
