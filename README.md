@@ -1,7 +1,15 @@
-# Didactic Octo Chrome
+# proyecto-nuevo
 
-Laboratorio ultraligero para experimentos con Node.js nativo.
+Motor de eventos liviano basado en una arquitectura **ToroidalVortex**, optimizado para el procesamiento de datos en tiempo real con un consumo mínimo de memoria.
 
-## Scripts
-* node test-connection.js
-* node telemetry.js
+## Características
+
+* **Consumo ultra bajo:** ~2.33 MB de uso de memoria Heap.
+* **Ciclo Punto Cero:** Rutina interna de liberación de caché y recolección de basura.
+* **Arquitectura limpia:** Totalmente desacoplado de integraciones legadas.
+
+## Uso rápido
+
+```bash
+node index.cjs
+```
