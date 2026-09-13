@@ -1,14 +1,30 @@
-# Dependencias y variables de entorno
+# Dependencias de Node
 node_modules/
-.env
-.env.*
+.pnpm-store/
+.bun/
 
-# Logs y archivos temporales
+# Archivos de estado, temporales y cachés
+gerrit-state.json
+.cache/
 *.log
-*.tmp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.node_repl_history
 
-# Archivos del editor y del sistema
-.vscode/
+# Archivos de configuración local y credenciales
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Archivos de sistema operativo y editores
 .DS_Store
 Thumbs.db
-data.json
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

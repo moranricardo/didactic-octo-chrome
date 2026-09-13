@@ -2,12 +2,12 @@
   "name": "didactic-octo-chrome",
   "version": "2.0.0",
   "type": "module",
-  "main": "test-connection.js",
-  "scripts": {
-    "start": "node test-connection.js",
-    "test": "node test-connection.js"
-  },
   "description": "Laboratorio de aprendizaje ligero en Node.js nativo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --check index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/moranricardo/didactic-octo-chrome.git"
